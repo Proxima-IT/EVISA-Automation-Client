@@ -11,6 +11,7 @@ import AutomationSettings from "../Pages/DashboardPages/AutomationSettings";
 import CheckAppointment from "../Pages/CheckAppointment";
 import DashboardDefault from "../Root/DefaultDashboard";
 import AboutUs from "../Pages/About Us/AboutUs";
+import ProfileSettings from "../Pages/ProfileSettings/ProfileSettings";
 
 
 
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
             {
                 path: "/aboutUs",
                 Component: AboutUs
+            },
+            {
+                path: "/profileSettings",
+                Component: ProfileSettings
             },
             {
                 path: "/login",

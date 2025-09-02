@@ -30,7 +30,7 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="text-[#2D336B] text-2xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="text-[#3D365C] text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {
                             user && user?.email ? 
                             <>
@@ -48,7 +48,7 @@ const Header = () => {
                 </div>
                 <Link 
                     to="/" 
-                    className="lg:flex hidden items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#2D336B]"
+                    className="lg:flex hidden items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#3D365C]"
                     >
                     <FaGlobeEurope className=''></FaGlobeEurope>
                     VisaAutomated
@@ -60,43 +60,67 @@ const Header = () => {
                     <FaGlobeEurope className=''></FaGlobeEurope>
                     VA
                 </Link>
-                {/* <img className="hidden lg:block w-20 h-20" src={siteLogo} alt="siteLogo" /> */}
             </div>
+
+            {/* Large screen */}
             <div className="navbar-center hidden lg:flex">
-                <ul className=" menu-horizontal px-1  text-[#2D336B] text-2xl font-bold">
+                <ul className=" menu-horizontal px-1  text-[#3D365C] text-xl font-bold">
                 {
                     user && user?.email ? 
                     <>
                         <li className='navLinks'><NavLink to="/">Home</NavLink></li>
                         <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Dashboard</NavLink></li>
+                        <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Pricing</NavLink></li>
                     </> 
                     :
                     <>
                         <li className='navLinks'><NavLink to="/">Home</NavLink></li>
                         <li className='navLinks lg:ml-10'><NavLink to="/login">Login</NavLink></li>
                         <li className='navLinks lg:ml-10'><NavLink to="/register">Register</NavLink></li>
+                        <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Pricing</NavLink></li>
+
                     </>
                 }
                 </ul>
             </div>
             <div className="navbar-end">
-                <div className='flex gap-2 lg:gap-4 justify-center items-center'>
-                    {
-                        user && user?.email ?
-                        <>
-                            <h1 className='text-[#2D336B] text-xl lg:text-2xl font-bold'>Hi,{user?.displayName}</h1>
-                            {/* <h1>{user?.email}</h1> */}
-                        </>
-                        :
-                        <FaUserCircle className="hidden lg:block w-15 h-15 bg-white p-1 rounded-full" size={25}></FaUserCircle>
-                    }
+                <div className="flex gap-2 lg:gap-4 justify-center items-center">
+                    {user && user?.email ? (
+                    <div className="dropdown dropdown-end">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img
+                            src={user?.photoURL || "https://i.ibb.co/4pDNDk1/avatar.png"}
+                            alt="user avatar"
+                            />
+                        </div>
+                        </label>
+                        <ul
+                        tabIndex={0}
+                        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                        >
+                        <li>
+                            <h1 className="font-bold text-xl text-[#2D336B]">
+                            Hi, {user?.displayName || "User"}
+                            </h1>
+                        </li>
+                        <li>
+                            <Link className="font-bold text-sm" to="/profileSettings">Profile Settings</Link>
+                        </li>
+                        <li>
+                            <button
+                            onClick={handleSignOut}
+                            className="flex items-center gap-2 text-red-600"
+                            >
+                            <FiLogOut size={18} /> Logout
+                            </button>
+                        </li>
+                        </ul>
+                    </div>
+                    ) : (
+                    <FaUserCircle className="hidden lg:block w-15 h-15 bg-white p-1 rounded-full" size={25} />
+                    )}
                 </div>
-                {
-                    (user && user?.email) ?
-                    <button className="ml-4 lg:ml-3 p-2 lg:p-3 flex gap-2 bg-[#B2A5FF] rounded-2xl justify-center items-center cursor-pointer hover:rounded-4xl hover:bg-[#a6ace0] lg:text-2xl" onClick={handleSignOut} ><FiLogOut size={25} color='purple'></FiLogOut>Logout</button>
-                    :
-                    "" 
-                }
             </div>
         </div>
     );

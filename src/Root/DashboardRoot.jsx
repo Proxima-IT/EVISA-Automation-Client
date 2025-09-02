@@ -57,7 +57,7 @@ const DashboardRoot = () => {
             </div>
 
             {/* Sidebar content */}
-            <div className="mt-5">
+            <div className="mt-5 text-xl">
             <li>
                 <NavLink to="/">
                 <FaHome className="inline-block" />
