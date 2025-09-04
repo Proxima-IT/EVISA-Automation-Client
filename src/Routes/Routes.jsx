@@ -12,6 +12,7 @@ import CheckAppointment from "../Pages/CheckAppointment";
 import DashboardDefault from "../Root/DefaultDashboard";
 import AboutUs from "../Pages/About Us/AboutUs";
 import ProfileSettings from "../Pages/ProfileSettings/ProfileSettings";
+import Pricing from "../Pages/Pricing/Pricing";
 
 
 
@@ -33,7 +34,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/profileSettings",
-                Component: ProfileSettings
+                element: <PrivateRoute> <ProfileSettings></ProfileSettings> </PrivateRoute>
+            },
+            {
+                path: "/pricing",
+                Component: Pricing
             },
             {
                 path: "/login",

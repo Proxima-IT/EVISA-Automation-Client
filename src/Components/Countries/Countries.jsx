@@ -16,12 +16,13 @@ const countries = [
 
 const Countries = () => {
   return (
-    <div className="mt-20 w-full py-10 bg-gray-50">
+    <div className="mt-20 w-full py-10 bg-[#f8b65f64] p-5 rounded-2xl max-w-[1450px] mx-auto">
       <h2 className='text-4xl font-bold text-gray-700 text-center mb-12'>
         🌍 Explore Countries
       </h2>
-      <Marquee gradient={false} speed={60} pauseOnHover={true}>
-        {countries.map((country, idx) => (
+      <div>
+      <Marquee gradient={false} speed={60} pauseOnHover={true} direction="left">
+        {countries.splice(0,5).map((country, idx) => (
           <div
             key={idx}
             className="flex flex-col items-center mx-6 bg-white shadow-md rounded-2xl p-4 w-40 hover:shadow-lg transition"
@@ -37,6 +38,26 @@ const Countries = () => {
           </div>
         ))}
       </Marquee>
+      </div>
+      <div className="mt-10">
+      <Marquee gradient={false} speed={60} pauseOnHover={true} direction="right">
+        {countries.splice(0,5).map((country, idx) => (
+          <div
+            key={idx}
+            className="flex flex-col items-center mx-6 bg-white shadow-md rounded-2xl p-4 w-40 hover:shadow-lg transition"
+          >
+            <img
+              src={country.flag}
+              alt={country.name}
+              className="w-20 h-14 object-cover rounded-md mb-3"
+            />
+            <h3 className="text-lg font-semibold text-gray-800">
+              {country.name}
+            </h3>
+          </div>
+        ))}
+      </Marquee>
+      </div>
     </div>
   );
 };

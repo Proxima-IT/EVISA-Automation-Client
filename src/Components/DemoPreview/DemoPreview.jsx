@@ -5,7 +5,7 @@ import siteDemo2 from '../../assets/siteDemo2.png';
 const DemoPreview = () => {
     return (
         <div>
-            <h1 className='text-4xl font-bold text-gray-700 text-center'>Things that make us <span className='underline italic'>Unique</span> </h1>
+            <h1 className='text-4xl font-bold text-gray-700 text-center'>🦾 Things that make us <span className='underline italic'>Unique</span> </h1>
 
             <div className='mt-20 max-w-7xl mx-auto space-y-20'>
                 <div className='flex gap-5'>

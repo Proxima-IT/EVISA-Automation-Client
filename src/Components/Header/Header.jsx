@@ -51,14 +51,14 @@ const Header = () => {
                     className="lg:flex hidden items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#3D365C]"
                     >
                     <FaGlobeEurope className=''></FaGlobeEurope>
-                    VisaAutomated
+                    EVISA APPOINTMENTS
                 </Link>
                 <Link 
                     to="/" 
-                    className="lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#2D336B]"
+                    className="italic lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#2D336B]"
                     >
                     <FaGlobeEurope className=''></FaGlobeEurope>
-                    VA
+                    EA
                 </Link>
             </div>
 
@@ -70,7 +70,7 @@ const Header = () => {
                     <>
                         <li className='navLinks'><NavLink to="/">Home</NavLink></li>
                         <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Dashboard</NavLink></li>
-                        <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Pricing</NavLink></li>
+                        <li className='navLinks lg:ml-10'><NavLink to="/pricing">Pricing</NavLink></li>
                     </> 
                     :
                     <>

@@ -3,6 +3,7 @@ import HeroBanner from '../../Components/Banner/Banner';
 import DemoPreview from '../../Components/DemoPreview/DemoPreview';
 import Countries from '../../Components/Countries/Countries';
 import HappyCustomers from '../../Components/HappyCustomers/HappyCustomers';
+import SuccessStory from '../../Components/SuccessStory/SuccessStory';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <DemoPreview></DemoPreview>
             <Countries></Countries>
             <HappyCustomers></HappyCustomers>
+            <SuccessStory></SuccessStory>
         </div>
     );
 };
