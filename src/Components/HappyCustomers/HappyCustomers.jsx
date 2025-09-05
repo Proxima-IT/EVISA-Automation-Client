@@ -8,7 +8,7 @@ const HappyCustomers = () => {
       <h2 className="text-4xl font-bold text-gray-700 text-center mb-10">
         😊 Our Happy Customers
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div data-aos="fade-up-top" className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         
         {/* Customers */}
         <div className="flex flex-col items-center bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition">
