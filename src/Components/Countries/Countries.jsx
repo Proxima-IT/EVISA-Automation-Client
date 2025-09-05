@@ -16,7 +16,7 @@ const countries = [
 
 const Countries = () => {
   return (
-    <div className="mt-20 w-full py-10 bg-[#f8b65f64] p-5 rounded-2xl max-w-[1450px] mx-auto">
+    <div className="mt-20 w-full py-10 bg-white p-5 rounded-2xl max-w-[1450px] mx-auto">
       <h2 className='text-4xl font-bold text-gray-700 text-center mb-12'>
         🌍 Explore Countries
       </h2>

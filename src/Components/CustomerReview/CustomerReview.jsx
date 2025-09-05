@@ -40,8 +40,8 @@ const reviews = [
 
 const CustomerReview = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto py-20 px-4">
-      <h2 className="text-4xl font-extrabold text-gray-900 text-center mb-14 tracking-tight">
+    <div className=" py-20 px-4">
+      <h2 className="text-4xl font-bold text-gray-700 text-center mb-10">
         💬 Hear From Our Happy Customers
       </h2>
       <Swiper
@@ -58,16 +58,16 @@ const CustomerReview = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex flex-col items-center bg-white/70 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-2xl mx-auto border border-gray-200"
+              className="flex flex-col items-center bg-white/70 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-6xl mx-auto border border-gray-200"
             >
-              <FaQuoteLeft className="text-purple-600 text-4xl mb-6 opacity-80" />
+              <FaQuoteLeft className="text-[#1a3c4c] text-4xl mb-6 opacity-80" />
               <p className="text-lg text-gray-700 font-medium leading-relaxed mb-8 italic">
                 “{review.review}”
               </p>
               <img
                 src={review.photo}
                 alt={review.name}
-                className="w-20 h-20 rounded-full object-cover border-4 border-purple-500 shadow-md mb-4"
+                className="w-20 h-20 rounded-full object-cover border-4 border-[#1a3c4c] shadow-md mb-4"
               />
               <h3 className="font-semibold text-xl text-gray-900">
                 {review.name}

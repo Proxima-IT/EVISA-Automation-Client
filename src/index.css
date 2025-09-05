@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+
+.titillium-web{
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
 
 /* 
 #3D365C -> dark purple
 #7C4585 -> dark/medium purple 
 #C95792 -> light purple
 #F8B55F -> light yellow
-
+bg-[#1a3c4c]
+bg-[#f8b65f64]
 */

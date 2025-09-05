@@ -12,7 +12,7 @@ const Profile = () => {
             <img
             src={user.photoURL || "https://via.placeholder.com/150"}
             alt="profile"
-            className="w-32 h-32 rounded-full object-cover border-4 border-purple-900 shadow-md"
+            className="w-32 h-32 p-2 rounded-full object-cover border-4 border-[#1a3c4c] shadow-md"
             />
             <h2 className="mt-4 text-2xl font-bold">{user.displayName || "No Name"}</h2>
             <p className="text-gray-600">{user.email}</p>

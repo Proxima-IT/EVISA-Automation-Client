@@ -11,7 +11,7 @@ export default function HeroBanner() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 0.1 }}
         transition={{ duration: 2 }}
-        className="absolute top-10 right-10 text-[12rem] text-[#2D336B]"
+        className="absolute top-10 right-40 text-[12rem] text-[#2D336B]"
       >
         <FaGlobeEurope />
       </motion.div>

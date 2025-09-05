@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-// import siteLogo from '../../assets/siteLogo.png';
+// import hamburger from '../../assets/HamburgerMenu.gif';
 import { Link, NavLink } from 'react-router';
 import './Header.css';
 import { toast } from 'react-toastify';
@@ -22,25 +22,28 @@ const Header = () => {
     }
 
     return (
-        <div className="lg:px-30 navbar shadow-sm p-2 lg:p-5">
+        <div className="lg:px-30 navbar shadow-sm p-2 lg:p-5 bg-[#1a3c4c] text-[#fff] fixed z-40">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        {/* <img className="w-5 h-5 bg-none" src={hamburger} alt="" /> */}
                     </div>
                     <ul
                         tabIndex={0}
-                        className="text-[#3D365C] text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="text-[#1a3c4c] text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         {
                             user && user?.email ? 
                             <>
                                 <li className='navLinks'><NavLink to="/">Home</NavLink></li>
                                 <li className='navLinks lg:ml-10'><NavLink to="/dashboard">Dashboard</NavLink></li>
+                                <li className='navLinks lg:ml-10'><NavLink to="/pricing">Pricing</NavLink></li>
+
                             </> 
                             :
                             <>
                                 <li className='navLinks'><NavLink to="/">Home</NavLink></li>
-                                <li className='navLinks lg:ml-10'><NavLink to="/login">Login</NavLink></li>
+                                <li className='navLinks lg:ml-10 '><NavLink to="/login">Login</NavLink></li>
                                 <li className='navLinks lg:ml-10'><NavLink to="/register">Register</NavLink></li>
                             </>
                         }
@@ -48,14 +51,14 @@ const Header = () => {
                 </div>
                 <Link 
                     to="/" 
-                    className="lg:flex hidden items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#3D365C]"
+                    className="lg:flex hidden items-center gap-2 text-xl lg:text-2xl font-bold text-[#fff]"
                     >
                     <FaGlobeEurope className=''></FaGlobeEurope>
                     EVISA APPOINTMENTS
                 </Link>
                 <Link 
                     to="/" 
-                    className="italic lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#2D336B]"
+                    className="italic lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-[#fff]"
                     >
                     <FaGlobeEurope className=''></FaGlobeEurope>
                     EA
@@ -64,7 +67,7 @@ const Header = () => {
 
             {/* Large screen */}
             <div className="navbar-center hidden lg:flex">
-                <ul className=" menu-horizontal px-1  text-[#3D365C] text-xl font-bold">
+                <ul className=" menu-horizontal px-1  text-[#fff] text-xl font-bold">
                 {
                     user && user?.email ? 
                     <>
@@ -105,7 +108,7 @@ const Header = () => {
                             </h1>
                         </li>
                         <li>
-                            <Link className="font-bold text-sm" to="/profileSettings">Profile Settings</Link>
+                            <Link className="font-bold text-sm text-[#2D336B]" to="/profileSettings">Profile Settings</Link>
                         </li>
                         <li>
                             <button

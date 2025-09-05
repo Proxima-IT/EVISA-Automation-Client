@@ -6,8 +6,8 @@ const SuccessStory = () => {
             <h1 className="text-4xl font-bold text-gray-700 text-center mb-10">🎥 Learn the success story from satisfied users</h1>
 
             <div className='flex flex-col lg:flex-row justify-center items-center gap-10 mt-20'>
-                <iframe width="560" className='rounded-4xl' data-aos="fade-up-right"
-                    height="315" 
+                <iframe  className='rounded-4xl w-100 h-100 lg:w-160 lg:h-115' data-aos="fade-up-right"
+                    
                     src="https://www.youtube.com/embed/EColTNIbOko" 
                     title="YouTube video player" 
                     frameborder="0" 
@@ -19,8 +19,8 @@ const SuccessStory = () => {
                     picture-in-picture;
                     web-share" allowfullscreen>
                 </iframe>
-                <iframe width="560" className='rounded-4xl' data-aos="fade-up-left"
-                    height="310" 
+                <iframe className='rounded-4xl w-100 h-100 lg:w-160 lg:h-115' data-aos="fade-up-left"
+                    
                     src="https://www.youtube.com/embed/gZgpNehW2mg" 
                     title="YouTube video player" 
                     frameborder="0" 

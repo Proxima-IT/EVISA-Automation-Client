@@ -10,29 +10,43 @@ import { Link } from 'react-router';
 
 const Footer = () => {
     return (
-       <footer className="mt-30 rounded-t-3xl flex lg:flex-row flex-col justify-between footer sm:footer-horizontal p-10 bg-[#1a3c4c] text-[#fff]">
-            <aside className='lg:mt-10'>
-                <h1 className="flex justify-center items-center gap-2 font-extrabold text-2xl"><FaGlobeEurope className="" />VisaAutomated</h1>
-            </aside>
-            <div className='text-xl font-extrabold mt-12'>
-                <h1>Useful Links</h1>
-                <Link to="/aboutUs">About Us</Link>
-                <Link to="/pricing">Pricing</Link>
-                <Link to="/profileSettings">Profile</Link>
-            </div>
-            <div className='flex flex-col-reverse'>
-                <h1 className='text-2xl font-extrabold mt-15'>&copy; All rights belong to the website owner</h1>
-                <nav>
-                    <h1 className="lg:mt-10 text-2xl font-extrabold ">Connect With Us!</h1>
-                    <div className="mt-4 flex gap-10">
-                        <a target="_blank" href='https://x.com'><BsTwitterX size={25}></BsTwitterX></a>
-                        <a target="_blank" href='https://www.facebook.com'><ImFacebook2 size={25}></ImFacebook2></a>
-                        <a target="_blank" href='https://www.instagram.com/nushrath_momita/'><ImInstagram size={25}></ImInstagram></a>
-                        <a target="_blank" href='https://www.facebook.com'><RiMessage3Fill size={30}></RiMessage3Fill></a>
+        <div>
+            <footer className='rounded-t-3xl flex flex-col justify-between items-center footer sm:footer-horizontal p-3 bg-[#1a3c4c] text-[#fff]'>
+                <div className='flex lg:flex-row flex-col justify-between gap-5 lg:gap-30'>
+                    <aside className='lg:mt-25'>
+                        <h1 className="flex justify-center items-center gap-2 font-bold text-2xl"><FaGlobeEurope className="" />VisaAutomated</h1>
+                    </aside>
+                    <div className='lg:mt-12'>
+                        <h1 className='text-2xl font-bold'>Useful Links</h1>
+                        <div className='grid grid-row-3 text-lg font-bold '>
+                            <Link to="/aboutUs">About Us</Link>
+                            <Link to="/pricing">Pricing</Link>
+                            <Link to="/profileSettings">Profile</Link>
+                        </div>
                     </div>
-                </nav>
-            </div>
-        </footer>
+                
+                    <div className='flex flex-col-reverse'>
+                        <nav>
+                            <h1 className="lg:mt-10 text-2xl font-bold ">Connect With Us!</h1>
+                            <div className="mt-4 flex gap-10">
+                                <a target="_blank" href='https://x.com'><BsTwitterX size={25}></BsTwitterX></a>
+                                <a target="_blank" href='https://www.facebook.com'><ImFacebook2 size={25}></ImFacebook2></a>
+                                <a target="_blank" href='https://www.instagram.com/nushrath_momita/'><ImInstagram size={25}></ImInstagram></a>
+                                <a target="_blank" href='https://www.facebook.com'><RiMessage3Fill size={30}></RiMessage3Fill></a>
+                            </div>
+                        </nav>
+                    </div>
+                    <div className='lg:mt-10 text-xl'>
+                        <h1 className="text-2xl font-bold">Disclaimer</h1>
+                        <p>Please note that this website is intended to provide <br /> general information 
+                            and is not intended to provide <br/> any legal advice and should not be relied on as such.</p>
+                    </div>
+                </div>
+                <div>
+                    <h1 className='text-2xl font-bold mt-0 text-white'>&copy; All rights belong to EVISA APPOINTMENTS</h1>
+                </div>
+            </footer>
+        </div>
     );
 };
 

@@ -6,13 +6,13 @@ import Register from "../Pages/Register/Resgister";
 import DashboardRoot from "../Root/DashboardRoot";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../Pages/DashboardPages/Profile";
-import proxyList from "./proxyList";
 import AutomationSettings from "../Pages/DashboardPages/AutomationSettings";
-import CheckAppointment from "../Pages/CheckAppointment";
 import DashboardDefault from "../Root/DefaultDashboard";
 import AboutUs from "../Pages/About Us/AboutUs";
 import ProfileSettings from "../Pages/ProfileSettings/ProfileSettings";
 import Pricing from "../Pages/Pricing/Pricing";
+import ProxyList from "../Pages/DashboardPages/proxyList";
+import CheckAppointment from "../Pages/DashboardPages/CheckAppointment";
 
 
 
@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/proxyList",
-                Component: proxyList
+                Component: ProxyList
             },
             {
                 path: "/dashboard/automationSettings",

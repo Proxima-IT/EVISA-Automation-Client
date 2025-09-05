@@ -4,7 +4,7 @@ import { FaUsers, FaGlobe, FaStar } from "react-icons/fa";
 
 const HappyCustomers = () => {
   return (
-    <div className="w-full py-16 bg-gray-50">
+    <div className="w-full py-16 bg-grday-50">
       <h2 className="text-4xl font-bold text-gray-700 text-center mb-10">
         😊 Our Happy Customers
       </h2>
