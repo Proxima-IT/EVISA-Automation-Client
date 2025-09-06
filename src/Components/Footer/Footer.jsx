@@ -11,7 +11,7 @@ import { Link } from 'react-router';
 const Footer = () => {
     return (
         <div>
-            <footer className='rounded-t-3xl flex flex-col justify-between items-center footer sm:footer-horizontal p-3 bg-[#1a3c4c] text-[#fff]'>
+            <footer className='rounded-t-3xl flex flex-col justify-between items-center footer sm:footer-horizontal p-3 bg-[#1a3c4c] dark:bg-amber-50 text-yellow-50 dark:text-[#1a3c4c]'>
                 <div className='flex lg:flex-row flex-col justify-between gap-5 lg:gap-30'>
                     <aside className='lg:mt-25'>
                         <h1 className="flex justify-center items-center gap-2 font-bold text-2xl"><FaGlobeEurope className="" />VisaAutomated</h1>
@@ -43,7 +43,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className='text-2xl font-bold mt-0 text-white'>&copy; All rights belong to EVISA APPOINTMENTS</h1>
+                    <h1 className='text-2xl font-bold mt-0 text-yellow-50 dark:text-[#1a3c4c]'>&copy; All rights belong to EVISA APPOINTMENTS</h1>
                 </div>
             </footer>
         </div>

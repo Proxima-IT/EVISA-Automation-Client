@@ -85,9 +85,9 @@ const Register = () => {
   };
 
   return (
-    <div className="winky-rough-regular hero">
+    <div className="hero mb-20 mt-10">
       <div className="hero-content rounded-3xl mt-30 flex-col justify-evenly lg:flex-row">
-        <div className="bg-gradient-to-br from-[#FFF2F2] to-[#DAD2FF] flex flex-col lg:flex-row justify-center items-center p-2 rounded-2xl w-full shadow-2xl">
+        <div className="flex flex-col lg:flex-row justify-center items-center p-2 rounded-2xl w-full shadow-2xl">
           <div className="p-6 flex flex-col max-w-lg rounded-2xl sm:p-10 text-gray-800">
             <div className="mb-4 text-center">
               <h1 className="my-3 text-4xl font-bold underline">Register</h1>
@@ -156,7 +156,7 @@ const Register = () => {
                   <button
                     type="submit"
                     disabled={uploading}
-                    className="cursor-pointer w-full px-8 py-3 text-2xl font-semibold rounded-md dark:bg-[#2D336B] dark:text-gray-50 disabled:opacity-50"
+                    className="cursor-pointer w-full px-8 py-3 text-2xl font-semibold rounded-md bg-white text-[#2D336B] border-2 border-[#2D336B] disabled:opacity-50"
                   >
                     {uploading ? 'Please wait...' : 'Register'}
                   </button>
@@ -165,7 +165,7 @@ const Register = () => {
                 <div className="divider"></div>
                 <p className="px-6 text-xl text-center dark:text-gray-600">
                   Already Have An Account?
-                  <NavLink className="underline text-purple-700" to="/login">
+                  <NavLink className="underline text-[#2D336B]" to="/login">
                     {' '}
                     Login here
                   </NavLink>

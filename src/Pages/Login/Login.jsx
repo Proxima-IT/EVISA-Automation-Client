@@ -32,9 +32,9 @@ const Login = () => {
 
     
     return (
-        <div className="hero mt-30">
+        <div className="hero mb-20 mt-10">
             <div className="rounded-3xl mt-30 flex-col justify-evenly lg:flex-col-reverse">
-                <div className="bg-gradient-to-tl from-[#FFF2F2] to-[#DAD2FF] flex flex-col lg:flex-row-reverse justify-center items-center p-2 rounded-2xl shadow-2xl">
+                <div className="flex flex-col lg:flex-row-reverse justify-center items-center p-2 rounded-2xl shadow-2xl">
                     <div className="p-6 flex flex-col rounded-2xl text-gray-800">
                         <div className="mb-4 text-center">
                             <h1 className="my-3 text-4xl font-bold underline">Login</h1>
@@ -58,13 +58,13 @@ const Login = () => {
                             </div>
                             <div className="space-y-2">
                                 <div>
-                                    <button type="submit" className="cursor-pointer w-full px-8 py-3 text-2xl font-semibold rounded-md dark:bg-[#2D336B] dark:text-gray-50">Login</button>
+                                    <button type="submit" className="cursor-pointer w-full px-8 py-3 text-2xl font-semibold rounded-md bg-white text-[#2D336B] border-2 border-[#2D336B]">Login</button>
                                 </div>
                                 {/* <h1 className="text-center text-2xl font-bold">Or</h1> */}
                                 <div className="divider"></div>
                                 <p className="px-6 text-xl text-center dark:text-gray-600">
                                 Don't have an account?
-                                <NavLink className="underline text-purple-700"to="/register"> Register here</NavLink>
+                                <NavLink className="underline text-[#2D336B]"to="/register"> Register here</NavLink>
                                 </p>
                             </div>
                     </form>

@@ -41,7 +41,7 @@ const reviews = [
 const CustomerReview = () => {
   return (
     <div className=" py-20 px-4">
-      <h2 className="text-4xl font-bold text-gray-700 text-center mb-10">
+      <h2 className="text-4xl font-bold text-gray-700 dark:text-yellow-50  text-center mb-10">
         💬 Hear From Our Happy Customers
       </h2>
       <Swiper

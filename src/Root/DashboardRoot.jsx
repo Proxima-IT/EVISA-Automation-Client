@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router";
-import {
-  FaHome,
-  FaUser,
-  FaServer,
-  FaCogs,
-  FaCalendarCheck,
-  FaTimes,
-} from "react-icons/fa";
+import {FaHome,FaUser,FaServer,FaCogs,FaCalendarCheck,FaTimes,} from "react-icons/fa";
 import "./DashboardRoot.css";
 
 const DashboardRoot = () => {
@@ -60,7 +53,7 @@ const DashboardRoot = () => {
             collapsed ? "w-20" : "w-72"
           } p-4 flex flex-col justify-between transition-all duration-300`}
         >
-          {/* Collapse button only visible on large screens */}
+          {/* Collapse button -> only visible on large screens */}
           <div className="hidden lg:flex justify-end">
             <button
               className="btn btn-ghost btn-sm text-xl"

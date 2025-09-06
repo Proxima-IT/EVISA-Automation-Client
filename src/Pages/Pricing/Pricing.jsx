@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pricing = () => {
     return (
-        <div className='max-w-6xl mx-auto flex justify-center items-center gap-20 mt-20'>
+        <div className='max-w-6xl mx-auto flex flex-col lg:flex-row justify-center items-center gap-20 mt-50 mb-40'>
             <div className="card w-96 bg-base-100 shadow-sm">
                 <div className="card-body">
                     <div className="flex justify-between">
