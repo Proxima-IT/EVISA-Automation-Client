@@ -17,7 +17,7 @@ const ProxyList = () => {
       case "Block":
         return "bg-red-100 text-red-700 border border-red-300";
       case "Checking":
-        return "bg-yellow-100 text-yellow-700 border border-yellow-300";
+        return "bg-teal-50 text-yellow-700 border border-yellow-300";
       default:
         return "bg-gray-100 whitespace-nowrap text-gray-700 border border-gray-300";
     }

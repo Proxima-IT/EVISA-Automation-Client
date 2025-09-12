@@ -40,7 +40,7 @@ const reviews = [
 
 const CustomerReview = () => {
   return (
-    <div className=" py-20 px-4">
+    <div className=" py-10 px-4">
       <h2 className="text-4xl font-bold text-gray-700 dark:text-yellow-50  text-center mb-10">
         💬 Hear From Our Happy Customers
       </h2>
@@ -49,7 +49,7 @@ const CustomerReview = () => {
         spaceBetween={40}
         slidesPerView={1}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3000 }}
+        autoplay={{ delay: 6000 }}
         loop={true}
       >
         {reviews.map((review, idx) => (
@@ -57,8 +57,8 @@ const CustomerReview = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col items-center bg-white/70 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-6xl mx-auto border border-gray-200"
+              transition={{ duration: 1.2 }}
+              className="flex flex-col items-center bg-white/70 border border-yellow-500 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-6xl mx-auto border border-gray-200"
             >
               <FaQuoteLeft className="text-[#1a3c4c] text-4xl mb-6 opacity-80" />
               <p className="text-lg text-gray-700 font-medium leading-relaxed mb-8 italic">

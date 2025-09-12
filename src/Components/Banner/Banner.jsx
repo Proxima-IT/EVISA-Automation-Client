@@ -2,52 +2,33 @@
 import { motion } from "framer-motion";
 import { FaPlaneDeparture, FaGlobeEurope } from "react-icons/fa";
 import { Link } from "react-router";
+import { RiFlightTakeoffFill } from "react-icons/ri";
 
 export default function HeroBanner() {
   return (
-    <section className="mt-40 rounded-3xl relative max-w-6xl mx-auto h-[350px] flex items-center justify-center overflow-hidden">
-      
-      <motion.div
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 0.1 }}
-        transition={{ duration: 2 }}
-        className="absolute top-10 right-40 text-[12rem] text-[#2D336B] dark:text-yellow-50"
-      >
-        <FaGlobeEurope />
-      </motion.div>
+    <div className="text-red-500 mt-20 bgimage h-screen flex flex-col items-center justify-center gap-6">
+      <h1 className="text-6xl font-bold font-roboto bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent">
+        Simplifying Your eVisa Journey
+      </h1>
 
-      <div className="relative z-10 text-center px-4">
-        
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-3xl lg:text-4xl italic font-bold text-[#3D365C] dark:text-yellow-50 drop-shadow-lg"
-        >
-          Automate your Portugal visa <br />appointments with speed and ease.
-          <FaPlaneDeparture className="inline-block mr-3 text-[#7C4585] dark:text-yellow-50" />
-        </motion.h1>
+      <p className="text-3xl font-bold text-gray-200 font-poppins">
+        Automated platform to check and book Portugal eVisa appointments
+        seamlessly
+      </p>
 
-        <motion.p
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="mt-6 text-xl md:text-2xl text-gray-700 dark:text-yellow-50 max-w-2xl mx-auto"
-        >
-          Prepare immigration applications faster than ever before.
-        </motion.p>
+      <Link to="/admin">
+        <button className="group relative px-10 py-3 rounded-[12px] bg-yellow-600 flex items-center justify-center cursor-pointer overflow-hidden shadow-[0_5px_10px_rgba(0,0,0,0.103)] transition-transform duration-500 active:scale-95">
+          {/* Icon Container */}
+          <div className="absolute text-xl left-[-60px] rounded-full flex items-center justify-center overflow-hidden z-20 transition-transform duration-500 group-hover:translate-x-[75px] group-hover:rounded-[40px] text-white">
+            <RiFlightTakeoffFill />
+          </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="mt-4 flex flex-col sm:flex-row justify-center gap-4"
-        >
-          <Link to="/aboutUs" className="lg:px-8 lg:py-3 px-1 py-2 bg-white text-[#2D336B] border-2 border-[#2D336B] text-lg font-semibold rounded-xl shadow-lg hover:bg-gray-100 transition">
-            About Us
-          </Link>
-        </motion.div>
-      </div>
-    </section>
+          {/* Text */}
+          <span className="flex items-center justify-center z-10 transition-transform duration-500 group-hover:translate-x-[8px] font-semibold  text-gray-100 text-lg font-poppins">
+            Book Appointment
+          </span>
+        </button>
+      </Link>
+    </div>
   );
 }

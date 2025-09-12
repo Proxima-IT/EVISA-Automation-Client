@@ -1,78 +1,149 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../Authentication/AuthContext';
-import { toast } from 'react-toastify';
-import { NavLink, useNavigate } from 'react-router';
+import React, { useContext } from "react";
+import { AuthContext } from "../../Authentication/AuthContext";
+import { toast } from "react-toastify";
+import { NavLink, useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 // import loginImage from '../../assets/loginImage.png'
 
 const Login = () => {
+  const { handleLogin } = useContext(AuthContext);
 
-    const {handleLogin} = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-    const handleLoginForm = (e) => {
-        e.preventDefault();
+  const onSubmit = (data) => console.log(data);
 
-        const form = e.target;
+  return (
+    <div className="hero mb-20 pt-28 bg-teal-50">
+      <div className="flex items-center justify-center min-h-screen  dark:bg-gray-900 px-4">
+        <div className="w-full  bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+          {/* Header */}
+          <div className="text-center mb-6">
+            <h1 className="text-4xl font-bold text-teal-800">Login</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
+              Welcome back! Please login to continue.
+            </p>
+          </div>
 
-        const email = form.email.value;
-        const password = form.password.value;
-
-        handleLogin(email,password)
-        .then(()=>{
-            toast.success("You've successfully logged in!");
-            setTimeout(()=>{
-                navigate('/')
-            },1500);
-        })
-        .catch(()=>{
-            toast.error("You have put invalid credentials.Please try again")
-        })
-    }
-
-    
-    return (
-        <div className="hero mb-20 mt-10">
-            <div className="rounded-3xl mt-30 flex-col justify-evenly lg:flex-col-reverse">
-                <div className="flex flex-col lg:flex-row-reverse justify-center items-center p-2 rounded-2xl shadow-2xl">
-                    <div className="p-6 flex flex-col rounded-2xl text-gray-800">
-                        <div className="mb-4 text-center">
-                            <h1 className="my-3 text-4xl font-bold underline">Login</h1>
-                            <p className="text-2xl dark:text-gray-600">
-                                Welcome Back!
-                            </p>
-                            <div className="divider"></div>
-                        </div>
-                        <form onSubmit={handleLoginForm} className="space-y-8">
-                            <div className="space-y-4 text-2xl">
-                                <div>
-                                    <label htmlFor="email" className="block mb-2 text-2xl">Enter Email</label>
-                                    <input type="email" name="email" id="email" placeholder="Enter email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800"/>
-                                </div>
-                                <div>
-                                <div className="flex justify-between mb-2">
-                                    <label htmlFor="password" className="text-2xl">Enter Password</label>
-                                </div>
-                                <input type="password" name="password" id="password" placeholder="Enter password"className="w-full px-3 py-2 border rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800" />
-                                </div>
-                            </div>
-                            <div className="space-y-2">
-                                <div>
-                                    <button type="submit" className="cursor-pointer w-full px-8 py-3 text-2xl font-semibold rounded-md bg-white text-[#2D336B] border-2 border-[#2D336B]">Login</button>
-                                </div>
-                                {/* <h1 className="text-center text-2xl font-bold">Or</h1> */}
-                                <div className="divider"></div>
-                                <p className="px-6 text-xl text-center dark:text-gray-600">
-                                Don't have an account?
-                                <NavLink className="underline text-[#2D336B]"to="/register"> Register here</NavLink>
-                                </p>
-                            </div>
-                    </form>
-                    </div>
-                </div>
+          {/* Form */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            {/* Email */}
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-lg font-medium mb-2 text-gray-700 dark:text-gray-300"
+              >
+                Email Address
+              </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Enter a valid email",
+                  },
+                })}
+                className="w-full px-4 py-3 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500 mt-1">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
+
+            {/* Password */}
+            <div>
+              <div className="flex justify-between items-center mb-2">
+                <label
+                  htmlFor="password"
+                  className="text-lg font-medium text-gray-700 dark:text-gray-300"
+                >
+                  Password
+                </label>
+                <NavLink
+                  to="/forgot-password"
+                  className="text-sm text-[#2D336B] hover:underline"
+                >
+                  Forgot password?
+                </NavLink>
+              </div>
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                })}
+                className="w-full px-4 py-3 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
+              />
+              {errors.password && (
+                <p className="text-sm text-red-500 mt-1">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
+
+            {/* Remember me */}
+            <div className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                id="remember"
+                {...register("remember")}
+                className="w-4 h-4 text-[#2D336B] border-gray-300 rounded focus:ring-[#2D336B]"
+              />
+              <label
+                htmlFor="remember"
+                className="text-sm text-gray-600 dark:text-gray-400"
+              >
+                Remember me
+              </label>
+            </div>
+
+            {/* Submit button */}
+            <button
+              type="submit"
+              className="w-full py-3 text-lg font-semibold rounded-xl bg-teal-700 text-white shadow-md hover:opacity-90 transition"
+            >
+              Login
+            </button>
+
+            {/* Divider */}
+            <div className="flex items-center justify-center gap-2">
+              <div className="h-px w-full bg-gray-300 dark:bg-gray-600"></div>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                OR
+              </span>
+              <div className="h-px w-full bg-gray-300 dark:bg-gray-600"></div>
+            </div>
+
+           
+
+            {/* Register link */}
+            <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
+              Don’t have an account?{" "}
+              <NavLink to="/register" className="underline text-[#2D336B]">
+                Register here
+              </NavLink>
+            </p>
+          </form>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Login;

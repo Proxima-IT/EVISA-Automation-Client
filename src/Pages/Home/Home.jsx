@@ -10,10 +10,10 @@ const Home = () => {
     return (
         <div className='space-y-20'>
             <HeroBanner></HeroBanner>
-            <DemoPreview></DemoPreview>
-            <Countries></Countries>
+            {/* <DemoPreview></DemoPreview> */}
+            {/* <Countries></Countries> */}
             <HappyCustomers></HappyCustomers>
-            <SuccessStory></SuccessStory>
+            {/* <SuccessStory></SuccessStory> */}
             <CustomerReview></CustomerReview>
         </div>
     );
