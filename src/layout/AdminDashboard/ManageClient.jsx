@@ -50,7 +50,7 @@ const ManageClient = () => {
                   <td className="p-3">name</td>             
 
                   <td className="p-3">
-                    <Link to="manage-client/edit-client">
+                    <Link to="/admin/edit-client">
                     <button className="bg-green-300 rounded-md px-3 py-1 text-black mb-2 font-bold cursor-pointer">
                       Edit
                     </button>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
 import "./Header.css";
 import { toast } from "react-toastify";
@@ -23,8 +23,18 @@ const Header = () => {
       .catch(() => {});
   };
 
+   const [scrolled, setScrolled] = useState(false);
+  
+    useEffect(() => {
+      const onScroll = () => {
+        setScrolled(window.scrollY > window.innerHeight);
+      };
+      window.addEventListener("scroll", onScroll);
+      return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
   return (
-    <div className="lg:px-10 navbar shadow-sm p-2 lg:p-5 bg-teal-800 dark:bg-amber-50 fixed z-30">
+    <div className={`lg:px-10 navbar text-white  ${scrolled ? "bg-black" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -55,26 +65,38 @@ const Header = () => {
                   <Link to="/">Home</Link>
                 </li>
                 <li className="navLinks lg:ml-10">
-                  <NavLink to="/dashboard">Dashboard</NavLink>
+                  <NavLink to="/admin">Dashboard</NavLink>
                 </li>
               </>
             ) : (
               <>
-                <li className="navLinks">
-                  <NavLink to="/">Home</NavLink>
+                <li className="">
+                  <NavLink
+                    to="/"
+                    className="border border-yellow-500 rounded-md px-3 py-1"
+                  >
+                    Home
+                  </NavLink>
                 </li>
-                <li className="navLinks lg:ml-10 ">
-                  <NavLink to="/login">Login</NavLink>
+                <li className=" lg:ml-10 ">
+                  <NavLink
+                    to="/login"
+                    className="border border-yellow-500 rounded-md px-3 py-1"
+                  >
+                    Login
+                  </NavLink>
                 </li>
               </>
             )}
           </ul>
         </div>
         {/* Logo */}
+       <Link to="/">
         <div className="flex items-center gap-2 text-2xl font-bold text-white dark:text-[#1a3c4c]">
           <FaGlobeEurope className="text-blue-400" />
           VisaAutomated
         </div>
+       </Link>
         <Link
           to="/"
           className="italic lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-yellow-50 dark:text-[#1a3c4c]"
@@ -89,11 +111,21 @@ const Header = () => {
         <ul className=" menu-horizontal px-1  text-yellow-50 dark:text-[#1a3c4c] text-xl font-bold">
           {user && user?.email ? (
             <>
-              <li className="navLinks">
-                <NavLink to="/">Home</NavLink>
+              <li className="">
+                <NavLink
+                  to="/"
+                  className="border border-yellow-500 rounded-md px-3 py-1"
+                >
+                  Home
+                </NavLink>
               </li>
-              <li className="navLinks lg:ml-10">
-                <NavLink to="/dashboard">Dashboard</NavLink>
+              <li className=" lg:ml-10">
+                <NavLink
+                  to="/admin"
+                  className="border border-yellow-500 rounded-md px-3 py-1"
+                >
+                  Dashboard
+                </NavLink>
               </li>
             </>
           ) : (
@@ -114,12 +146,12 @@ const Header = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <button
+        {/* <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded cursor-pointer"
         >
           {theme === "light" ? "🌙" : "☀️"}
-        </button>
+        </button> */}
         <div className="flex gap-2 lg:gap-4 justify-center items-center ">
           {user && user?.email ? (
             <div className="dropdown dropdown-end">
@@ -130,16 +162,16 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
+                className="menu menu-sm  dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-56 flex flex-col  gap-1"
               >
                 <li>
-                  <h1 className="font-bold text-xl text-[#2D336B]">
+                  <h1 className="font-bold text-base text-black">
                     Hi, {user?.displayName || "User"}
                   </h1>
                 </li>
                 <li>
                   <Link
-                    className="font-bold text-sm text-[#2D336B]"
+                    className="font-bold text-lg text-blue-900"
                     to="/profileSettings"
                   >
                     Profile Settings
@@ -148,7 +180,7 @@ const Header = () => {
                 <li>
                   <button
                     onClick={handleSignOut}
-                    className="flex items-center gap-2 text-red-600"
+                    className="flex items-center gap-2 text-lg text-red-700"
                   >
                     <FiLogOut size={18} /> Logout
                   </button>

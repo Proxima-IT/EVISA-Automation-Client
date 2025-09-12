@@ -21,7 +21,7 @@ const AddClient = () => {
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col   md:flex-row gap-10 mt-3 w-full "
+        className="flex flex-col   md:flex-row gap-10 mt-3 w-full"
       >
         <div className="grid grid-cols-2 gap-5 mx-auto w-full">
           <div className="">
@@ -34,7 +34,7 @@ const AddClient = () => {
               // value={data.email}
 
               placeholder="Enter Client Name"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -47,7 +47,7 @@ const AddClient = () => {
               // value={data.email}
 
               placeholder="Enter Passport number"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -60,7 +60,7 @@ const AddClient = () => {
               // value={data.email}
 
               placeholder="Enter Client date of birth"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -71,7 +71,7 @@ const AddClient = () => {
               // value={data.email}
 
               placeholder="Enter Client Email"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -82,7 +82,7 @@ const AddClient = () => {
               // value={data.email}
 
               placeholder="Enter Client Phone Number"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
 
@@ -94,7 +94,7 @@ const AddClient = () => {
 
             <select
               {...register("status")}
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             >
               <option value="">Select status</option>
               <option value="male">Active</option>
@@ -112,8 +112,8 @@ const AddClient = () => {
               {...register("date")}
               // value={data.email}
 
-              placeholder="Enter Client Phone Number"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              placeholder="Enter Appointment Date"
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -125,8 +125,8 @@ const AddClient = () => {
               {...register("time")}
         
 
-              placeholder="Enter Client Phone Number"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              placeholder="Enter Appointment TIme"
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
           <div className="">
@@ -138,8 +138,8 @@ const AddClient = () => {
               {...register("confirmationId")}
            
 
-              placeholder="Enter Client Phone Number"
-              className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+              placeholder="Enter Confirmation ID"
+              className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
         </div>

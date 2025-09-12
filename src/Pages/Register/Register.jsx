@@ -20,10 +20,9 @@ const Register = () => {
   const [profileImage, setProfileImage] = useState("");
   const [uploading, setUploading] = useState(false);
 
-
-   const onSubmit = async(data) => {
-    console.log(data)
-     if (!profileImage) {
+  const onSubmit = async (data) => {
+    console.log(data);
+    if (!profileImage) {
       toast.error("You must upload a profile image!");
       return;
     }
@@ -62,31 +61,31 @@ const Register = () => {
       console.error(error);
       toast.error("Invalid credentials. Please try again.");
     }
-   };
+  };
 
-  // const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const image = e.target.files?.[0];
-  //   if (!image) return;
-  //   setUploading(true);
+  const handlePhotoUpload = async (e) => {
+    const image = e.target.files?.[0];
+    if (!image) return;
+    setUploading(true);
 
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append("image", image);
+    try {
+      const formData = new FormData();
+      formData.append("image", image);
 
-  //     const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
-  //       import.meta.env.VITE_image_key_api
-  //     }`;
+      const imageUploadUrl = `https://api.imgbb.com/1/upload?key=${
+        import.meta.env.VITE_image_key_api
+      }`;
 
-  //     const res = await axios.post(imageUploadUrl, formData);
-  //     setProfileImage(res.data.data.url);
-  //     toast.success("Image uploaded successfully!");
-  //   } catch (err) {
-  //     console.error(err);
-  //     toast.error("Image upload failed, try again.");
-  //   } finally {
-  //     setUploading(false);
-  //   }
-  // };
+      const res = await axios.post(imageUploadUrl, formData);
+      setProfileImage(res.data.data.url);
+      toast.success("Image uploaded successfully!");
+    } catch (err) {
+      console.error(err);
+      toast.error("Image upload failed, try again.");
+    } finally {
+      setUploading(false);
+    }
+  };
 
   return (
     <div className="hero mb-20 pt-28 bg-teal-50">
@@ -158,7 +157,7 @@ const Register = () => {
                 type="file"
                 id="photo"
                 accept="image/*"
-                // onChange={handlePhotoUpload}
+                onChange={handlePhotoUpload}
                 className="w-full px-4 py-2 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
               />
               {uploading && (
@@ -183,7 +182,7 @@ const Register = () => {
               />
               {errors.password && (
                 <p className="text-red-500 text-sm mt-1">
-                  {errors.password.message }
+                  {errors.password.message}
                 </p>
               )}
             </div>
@@ -200,7 +199,9 @@ const Register = () => {
             {/* Divider */}
             <div className="flex items-center justify-center gap-2">
               <div className="h-px w-full bg-gray-300 dark:bg-gray-600"></div>
-              <span className="text-sm text-gray-500 dark:text-gray-400">OR</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400">
+                OR
+              </span>
               <div className="h-px w-full bg-gray-300 dark:bg-gray-600"></div>
             </div>
 

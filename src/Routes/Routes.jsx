@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
             Component: ManageClient,
           },
           {
-            path: "manage-client/edit-client",
+            path: "edit-client",
             Component: EditClient,
           },
         ],

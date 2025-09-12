@@ -7,10 +7,10 @@ const Root = () => {
     const location = useLocation();
     // console.log(location,location.pathname)
     return (
-        <div className='overflow-x-hidden bg-teal-50 dark:bg-[#1a3c4c]'>
-            {
+        <div className='overflow-x-hidden  dark:bg-[#1a3c4c]'>
+            {/* {
                 location.pathname !== "*" && <Header></Header>
-            }
+            } */}
             
             <Outlet></Outlet>
             {

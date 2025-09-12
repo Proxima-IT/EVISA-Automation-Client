@@ -34,7 +34,7 @@ const EditClient = () => {
               {...register("name")}
               // value={data.email}
 
-              placeholder="Enter Client Name"
+              placeholder="Update Client Name"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -47,7 +47,7 @@ const EditClient = () => {
               {...register("passportNumber")}
               // value={data.email}
 
-              placeholder="Enter Passport number"
+              placeholder="Update Passport number"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -60,7 +60,7 @@ const EditClient = () => {
               {...register("dob")}
               // value={data.email}
 
-              placeholder="Enter Client date of birth"
+              placeholder="Update Client date of birth"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -71,7 +71,7 @@ const EditClient = () => {
               {...register("email")}
               // value={data.email}
 
-              placeholder="Enter Client Email"
+              placeholder="Update Client Email"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -82,7 +82,7 @@ const EditClient = () => {
               {...register("phone")}
               // value={data.email}
 
-              placeholder="Enter Client Phone Number"
+              placeholder="Update Client Phone Number"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -113,7 +113,7 @@ const EditClient = () => {
               {...register("date")}
               // value={data.email}
 
-              placeholder="Enter Client Phone Number"
+              placeholder="Update Appointment Date"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -126,7 +126,7 @@ const EditClient = () => {
               {...register("time")}
         
 
-              placeholder="Enter Client Phone Number"
+              placeholder="Update Appointment Time"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
@@ -139,7 +139,7 @@ const EditClient = () => {
               {...register("confirmationId")}
            
 
-              placeholder="Enter Client Phone Number"
+              placeholder="Update Confirmation ID"
               className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
