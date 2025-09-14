@@ -1,5 +1,7 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddClient = () => {
   const {
@@ -12,20 +14,42 @@ const AddClient = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+
+    axios
+      .post(`${import.meta.env.VITE_API_URL}/clients`, data)
+      .then((res) => {
+        console.log(res.data);
+        toast.success("Client data added successfully", {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
+        reset();
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("Failed to create data", {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "dark",
+        });
+      });
   };
+
   return (
-    <div className="w-full border border-teal-800 rounded-lg p-6">
+    <div className="w-full border border-teal-800 rounded-lg p-6 font-montserrat mb-4">
       <div className="text-lg font-roboto text-center font-bold text-white mb-4 bg-teal-800 w-full lg:w-1/4 px-3 py-1 mx-auto rounded-md">
         Add New Client
       </div>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col   md:flex-row gap-10 mt-3 w-full"
+        className="flex flex-col md:flex-row gap-10 mt-3 w-full "
       >
-        <div className="grid grid-cols-2 gap-5 mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-auto w-full">
           <div className="">
-            <label className=" text-xl font-medium text-black ">Name
+            <label className=" text-xl font-medium text-black ">
+              Name
               {/* <span className="text-red-600">*</span> */}
             </label>
             <input
@@ -88,8 +112,8 @@ const AddClient = () => {
 
           {/*  Gender */}
           <div className="mb-2">
-            <label className="block text-base font-medium text-left text-gray-50 mb-2">
-              Status 
+            <label className="block text-base font-medium text-left text-black mb-2">
+              Status
             </label>
 
             <select
@@ -97,9 +121,9 @@ const AddClient = () => {
               className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             >
               <option value="">Select status</option>
-              <option value="male">Active</option>
-              <option value="female">Pending</option>
-              <option value="other">Inactive</option>
+              <option value="Active">Active</option>
+              <option value="Pending">Pending</option>
+              <option value="Inactive">Inactive</option>
             </select>
           </div>
 
@@ -109,7 +133,7 @@ const AddClient = () => {
             </label>
             <input
               type="text"
-              {...register("date")}
+              {...register("appointment.date")}
               // value={data.email}
 
               placeholder="Enter Appointment Date"
@@ -122,9 +146,7 @@ const AddClient = () => {
             </label>
             <input
               type="text"
-              {...register("time")}
-        
-
+              {...register("appointment.time")}
               placeholder="Enter Appointment TIme"
               className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
@@ -135,15 +157,20 @@ const AddClient = () => {
             </label>
             <input
               type="text"
-              {...register("confirmationId")}
-           
-
+              {...register("appointment.confirmationId")}
               placeholder="Enter Confirmation ID"
               className="w-full h-14 border border-amber-500 placeholder-gray-700  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
             />
           </div>
+          <input
+            type="submit"
+            value="Create Client"
+            className="lg:w-1/2 w-full mx-auto lg:col-span-2 bg-yellow-700 mt-3 rounded-md px-4 py-2 shadow-sm text-white hover:bg-yellow-400 transition-all duration-300 font-medium cursor-pointer"
+          />
         </div>
       </form>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

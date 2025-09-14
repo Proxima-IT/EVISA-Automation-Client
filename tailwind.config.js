@@ -10,6 +10,7 @@ export default {
         roboto: ["Roboto", "sans-serif"],
         baloo: ["Baloo Da 2", "cursive"],
         anek: ["Anek Bangla", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

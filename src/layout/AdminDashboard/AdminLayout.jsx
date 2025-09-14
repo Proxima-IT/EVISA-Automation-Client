@@ -16,17 +16,16 @@ const AdminLayout = () => {
   return (
     <div>
       <div className="!bg-black">
-        <Header></Header>
+        <Header solid></Header>
       </div>
-      <div className="min-h-[500px] pt-20  flex gap-5 mx-auto w-full px-5">
-        <div className="w-3/12 mt-10">
+      <div className="min-h-[500px] pt-20   flex flex-col lg:flex-row gap-5 mx-auto w-full px-5">
+        <div className="lg:w-3/12 w-full mt-10">
           <Sidenav></Sidenav>
         </div>
-        <div className="w-9/12">
-          <div className=" w-1/3 text-center mx-auto rounded-lg  text-[10px] lg:text-[16px] font-bold bg-amber-300 text-black my-[15px] p-3">
+        <div className="lg:w-9/12 w-full">
+          {/* <div className=" lg:w-1/3 w-full text-center mx-auto rounded-lg  text-[14px] lg:text-[16px] font-bold bg-amber-300 text-black my-[15px] p-3">
             {greeting}, <strong> Admin 👋</strong>
-          </div>
-
+          </div> */}
           <Outlet></Outlet>
         </div>
       </div>

@@ -41,9 +41,11 @@ const reviews = [
 const CustomerReview = () => {
   return (
     <div className=" py-10 px-4">
-      <h2 className="text-4xl font-bold text-gray-700 dark:text-yellow-50  text-center mb-10">
-        💬 Hear From Our Happy Customers
-      </h2>
+         <h2 className="text-2xl md:text-5xl text-center font-bold mb-12">
+            💬 Hear From Our <span className="text-teal-800">Happy</span> Customers
+          </h2>
+   
+  
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={40}

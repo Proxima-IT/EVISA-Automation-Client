@@ -6,18 +6,23 @@ import { RiFlightTakeoffFill } from "react-icons/ri";
 import Header from "../Header/Header";
 import { useState } from "react";
 
+
 export default function HeroBanner() {
 
  
   return (
     <div className=" bgimage ">
       <Header></Header>
-      <div className="flex flex-col items-center justify-center gap-6 h-[700px] ">
-        <h1 className="text-6xl font-bold font-roboto bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent">
+      <div className="flex flex-col items-center justify-center gap-6 h-[500px] lg:h-[700px] p-2">
+        <motion.h1
+         initial={{ opacity: 0, y: 50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+           className=" text-3xl text-center lg:text-7xl leading-[1.3]  font-bold font-roboto bg-gradient-to-r from-yellow-400 to-teal-400 bg-clip-text text-transparent">
           Simplifying Your eVisa Journey
-        </h1>
+        </motion.h1>
 
-        <p className="text-3xl font-bold text-gray-200 font-poppins">
+        <p className="text-lg lg:text-3xl text-center font-bold text-gray-200 font-poppins">
           Automated platform to check and book Portugal eVisa appointments
           seamlessly
         </p>

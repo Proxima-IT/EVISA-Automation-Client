@@ -8,7 +8,7 @@ import { FaGlobeEurope } from "react-icons/fa";
 import defaultPic from "../../assets/defaultUserIcon.jpg";
 import { ThemeContext } from "../../Context/ThemeContext";
 
-const Header = () => {
+const Header = ({solid}) => {
   const { user, handleLogout } = useContext(AuthContext);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -34,7 +34,7 @@ const Header = () => {
     }, []);
 
   return (
-    <div className={`lg:px-10 navbar text-white  ${scrolled ? "bg-black" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
+    <div className={`lg:px-10 navbar text-white shadow-md  ${scrolled || solid ? "bg-teal-700" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,18 +92,12 @@ const Header = () => {
         </div>
         {/* Logo */}
        <Link to="/">
-        <div className="flex items-center gap-2 text-2xl font-bold text-white dark:text-[#1a3c4c]">
+        <div className="flex items-center gap-2 text-lg lg:text-2xl font-bold text-white dark:text-[#1a3c4c]">
           <FaGlobeEurope className="text-blue-400" />
           VisaAutomated
         </div>
        </Link>
-        <Link
-          to="/"
-          className="italic lg:hidden flex  items-center gap-2 text-xl lg:text-2xl font-extrabold text-yellow-50 dark:text-[#1a3c4c]"
-        >
-          <FaGlobeEurope className=""></FaGlobeEurope>
-          EA
-        </Link>
+       
       </div>
 
       {/* Large screen */}

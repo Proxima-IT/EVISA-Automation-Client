@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import Root from "../Root/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -59,6 +59,7 @@ export const router = createBrowserRouter([
         path: "/admin",
         Component: AdminLayout,
         children: [
+          
           {
             path: "add-client",
             Component: AddClient,
@@ -68,7 +69,7 @@ export const router = createBrowserRouter([
             Component: ManageClient,
           },
           {
-            path: "edit-client",
+            path: "edit-client/:id",
             Component: EditClient,
           },
         ],

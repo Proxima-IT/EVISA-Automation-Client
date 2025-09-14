@@ -25,8 +25,8 @@ nav > a.active {
 }
 
 .bgimage{
-  background-color: rgba(30, 28, 28, 0.6);
-    background-image: url('/src/assets/visa.jpg');
+  background-color: rgba(27, 27, 26, 0.6);
+    background-image: url('/src/assets/portugal.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
