@@ -3,6 +3,7 @@ import { AuthContext } from "../../Authentication/AuthContext";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import Header from "../../Components/Header/Header";
 // import loginImage from '../../assets/loginImage.png'
 
 const Login = () => {
@@ -20,21 +21,22 @@ const Login = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="hero mb-20 pt-28 bg-teal-50">
-      <div className="flex items-center justify-center min-h-screen  dark:bg-gray-900 px-4">
-        <div className="w-full  bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+    <div className="hero pb-20 pt-28 bg-teal-50 dark:bg-gray-700">
+     
+      <div className="flex items-center justify-center min-h-screen   px-4">
+        <div className="w-full  bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10">
           {/* Header */}
           <div className="text-center mb-6">
-            <h1 className="text-4xl font-bold text-teal-800">Login</h1>
+            <h1 className="text-4xl font-bold text-teal-800  dark:text-teal-200">Login</h1>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
               Welcome back! Please login to continue.
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 ">
             {/* Email */}
-            <div>
+            <div className="">
               <label
                 htmlFor="email"
                 className="block text-lg font-medium mb-2 text-gray-700 dark:text-gray-300"
@@ -72,7 +74,7 @@ const Login = () => {
                 </label>
                 <NavLink
                   to="/forgot-password"
-                  className="text-sm text-[#2D336B] hover:underline"
+                  className="text-sm text-[#2D336B] dark:text-white hover:underline"
                 >
                   Forgot password?
                 </NavLink>
@@ -135,7 +137,7 @@ const Login = () => {
             {/* Register link */}
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
               Don’t have an account?{" "}
-              <NavLink to="/register" className="underline text-[#2D336B]">
+              <NavLink to="/register" className="underline text-[#2D336B] dark:text-white">
                 Register here
               </NavLink>
             </p>

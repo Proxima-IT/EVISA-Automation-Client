@@ -10,10 +10,10 @@ import { Link } from "react-router";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-teal-900 dark:bg-amber-50 text-yellow-50 dark:text-[#1a3c4c] py-10 px-6 ">
+      <footer className="bg-teal-900 dark:bg-gray-800 text-yellow-50 dark:text-[#edeff0] py-10 px-6 ">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo */}
-          <div className="flex items-center gap-2 text-2xl font-bold text-white dark:text-[#1a3c4c]">
+          <div className="flex items-center gap-2 text-2xl font-bold text-white ">
             <FaGlobeEurope className="text-blue-400" />
             VisaAutomated
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Line */}
-        <div className="border-t border-gray-700 dark:border-gray-300 mt-8 pt-6 text-center text-sm text-gray-100 dark:text-gray-600">
+        <div className="border-t border-gray-700 dark:border-gray-300 mt-8 pt-6 text-center text-sm text-gray-100 ">
           &copy; {new Date().getFullYear()} VisaAutomated — All Rights Reserved
         </div>
       </footer>

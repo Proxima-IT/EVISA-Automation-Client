@@ -12,7 +12,7 @@ export default function HeroBanner() {
  
   return (
     <div className=" bgimage ">
-      <Header></Header>
+      
       <div className="flex flex-col items-center justify-center gap-6 h-[500px] lg:h-[700px] p-2">
         <motion.h1
          initial={{ opacity: 0, y: 50, scale: 0.9 }}

@@ -9,7 +9,7 @@ import Howitworks from '../../Components/Howitworks/Howitworks';
 
 const Home = () => {
     return (
-        <div className='space-y-10 bg-teal-50'>
+        <div className='space-y-10 bg-teal-50 dark:bg-gray-700'>
             <HeroBanner></HeroBanner>
             <Howitworks></Howitworks>
             {/* <DemoPreview></DemoPreview> */}

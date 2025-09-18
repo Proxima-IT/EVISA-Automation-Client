@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 import "./Header.css";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Authentication/AuthContext";
@@ -33,8 +33,12 @@ const Header = ({solid}) => {
       return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    const location = useLocation();
+  const isLoginPage = location.pathname === "/login" 
+  const isSignupPage = location.pathname === "/register"
+
   return (
-    <div className={`lg:px-10 navbar text-white shadow-md  ${scrolled || solid ? "bg-teal-700" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
+    <div className={`lg:px-10 navbar text-white shadow-md  ${scrolled || solid || isLoginPage || isSignupPage ? "bg-teal-700" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +61,7 @@ const Header = ({solid}) => {
           </div>
           <ul
             tabIndex={0}
-            className="text-[#1a3c4c] text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="text-[#1a3c4c] dark:text-white text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             {user && user?.email ? (
               <>
@@ -92,7 +96,7 @@ const Header = ({solid}) => {
         </div>
         {/* Logo */}
        <Link to="/">
-        <div className="flex items-center gap-2 text-lg lg:text-2xl font-bold text-white dark:text-[#1a3c4c]">
+        <div className="flex items-center gap-2 text-lg lg:text-2xl font-bold text-white dark:text-[#eff4f7]">
           <FaGlobeEurope className="text-blue-400" />
           VisaAutomated
         </div>
@@ -102,7 +106,7 @@ const Header = ({solid}) => {
 
       {/* Large screen */}
       <div className="ml-20 navbar-center hidden lg:flex">
-        <ul className=" menu-horizontal px-1  text-yellow-50 dark:text-[#1a3c4c] text-xl font-bold">
+        <ul className=" menu-horizontal px-1  text-yellow-50 dark:text-[#e2e8eb] text-xl font-bold">
           {user && user?.email ? (
             <>
               <li className="">
@@ -140,12 +144,12 @@ const Header = ({solid}) => {
         </ul>
       </div>
       <div className="navbar-end">
-        {/* <button
+        <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded cursor-pointer"
         >
           {theme === "light" ? "🌙" : "☀️"}
-        </button> */}
+        </button>
         <div className="flex gap-2 lg:gap-4 justify-center items-center ">
           {user && user?.email ? (
             <div className="dropdown dropdown-end">

@@ -61,9 +61,9 @@ const EditClient = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col   md:flex-row gap-10 mt-3 w-full "
         >
-          <div className="grid grid-cols-2 gap-5 mx-auto w-full">
+          <div className="grid grid-cols-2 gap-5 mx-auto w-full   dark:text-white">
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Name
                 {/* <span className="text-red-600">*</span> */}
               </label>
@@ -73,11 +73,11 @@ const EditClient = () => {
                 // value={data.email}
                 defaultValue={client.name}
                 placeholder="Update Client Name"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Passport number
               </label>
               <input
@@ -86,11 +86,11 @@ const EditClient = () => {
                 // value={data.email}
                 defaultValue={client.passportNumber}
                 placeholder="Update Passport number"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Date of birth
               </label>
               <input
@@ -99,29 +99,29 @@ const EditClient = () => {
                 // value={data.email}
                 defaultValue={client.dob}
                 placeholder="Update Client date of birth"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">Email</label>
+              <label className=" text-xl font-medium  ">Email</label>
               <input
                 type="email"
                 {...register("email")}
                 // value={data.email}
                 defaultValue={client.email}
                 placeholder="Update Client Email"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">Phone</label>
+              <label className=" text-xl font-medium  ">Phone</label>
               <input
                 type="text"
                 {...register("phone")}
                 // value={data.email}
                 defaultValue={client.phone}
                 placeholder="Update Client Phone Number"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
 
@@ -134,7 +134,7 @@ const EditClient = () => {
               <select
                 {...register("status")}
                 defaultValue={client.status}
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               >
                 <option value="">Select status</option>
                 <option value="Active">Active</option>
@@ -144,7 +144,7 @@ const EditClient = () => {
             </div>
 
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Appointment Date
               </label>
               <input
@@ -153,11 +153,11 @@ const EditClient = () => {
                 // value={data.email}
                 defaultValue={client.appointment?.date}
                 placeholder="Update Appointment Date"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Appointment TIme
               </label>
               <input
@@ -165,11 +165,11 @@ const EditClient = () => {
                 {...register("appointment.time")}
                 defaultValue={client.appointment?.time}
                 placeholder="Update Appointment Time"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
             <div className="">
-              <label className=" text-xl font-medium text-black ">
+              <label className=" text-xl font-medium  ">
                 Confirmation ID
               </label>
               <input
@@ -177,7 +177,7 @@ const EditClient = () => {
                 {...register("appointment.confirmationId")}
                 defaultValue={client.appointment?.confirmationId}
                 placeholder="Update Confirmation ID"
-                className="w-full h-14 border border-amber-500 placeholder-black  rounded-md px-4 py-2 shadow-lg text-black font-medium mt-2  focus:outline-none "
+                className="w-full h-14 border border-amber-500 placeholder-gray-700  dark:placeholder-gray-200 rounded-md px-4 py-2 shadow-lg  font-medium mt-2  focus:outline-none "
               />
             </div>
 

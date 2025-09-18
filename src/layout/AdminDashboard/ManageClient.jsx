@@ -47,7 +47,7 @@ const ManageClient = () => {
         {/* // main dynamic content goes here */}
         <div className="container p-2 mx-auto sm:p-4 flex flex-col items-center ">
           <div className="w-full overflow-x-scroll">
-            <table className=" text-center">
+            <table className=" text-center w-full">
               <colgroup>
                 <col />
                 <col />
@@ -59,7 +59,7 @@ const ManageClient = () => {
                 <col />
                 <col />
               </colgroup>
-              <thead className="bg-teal-300  rounded-md whitespace-nowrap">
+              <thead className="bg-teal-300  rounded-md whitespace-nowrap text-black">
                 <tr className="text-center lg:text-base text-sm ">
                   <th className="p-3">SL.</th>
                   <th className="p-3">Name</th>
@@ -74,11 +74,11 @@ const ManageClient = () => {
                   <th className="p-3">Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="whitespace-nowrap">
                 {clients.map((client, index) => (
                   <tr
                     key={client._id}
-                    className="w-full border-b border-opacity-20 text-center bg-teal-100 border-gray-700 "
+                    className="w-full border-b border-opacity-20 text-center text-black bg-teal-100 border-gray-700 "
                   >
                     <td className="p-3">{(page - 1) * 10 + (index + 1)}</td>
                     <td className="p-3">{client.name}</td>

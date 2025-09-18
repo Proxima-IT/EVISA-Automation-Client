@@ -88,12 +88,12 @@ const Register = () => {
   };
 
   return (
-    <div className="hero mb-20 pt-28 bg-teal-50">
-      <div className="flex items-center justify-center min-h-screen dark:bg-gray-900 px-4">
+    <div className="hero pb-20 pt-28 bg-teal-50 dark:bg-gray-700">
+      <div className="flex items-center justify-center min-h-screen  px-4">
         <div className="w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
           {/* Header */}
           <div className="text-center mb-6">
-            <h1 className="text-4xl font-bold text-teal-800">Register</h1>
+            <h1 className="text-4xl font-bold text-teal-800 dark:text-teal-200">Register</h1>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
               Create an account to continue.
             </p>
@@ -208,7 +208,7 @@ const Register = () => {
             {/* Login link */}
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
               Already have an account?{" "}
-              <NavLink to="/login" className="underline text-[#2D336B]">
+              <NavLink to="/login" className="underline text-[#2D336B] dark:text-white">
                 Login here
               </NavLink>
             </p>

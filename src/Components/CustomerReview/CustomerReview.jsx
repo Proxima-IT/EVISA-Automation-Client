@@ -41,8 +41,8 @@ const reviews = [
 const CustomerReview = () => {
   return (
     <div className=" py-10 px-4">
-         <h2 className="text-2xl md:text-5xl text-center font-bold mb-12">
-            💬 Hear From Our <span className="text-teal-800">Happy</span> Customers
+         <h2 className="text-2xl md:text-5xl text-center font-bold mb-12 text-black dark:text-white">
+            💬 Hear From Our <span className="text-teal-800 dark:text-teal-300">Happy</span> Customers
           </h2>
    
   
@@ -60,7 +60,7 @@ const CustomerReview = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              className="flex flex-col items-center bg-white/70 border border-yellow-500 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-6xl mx-auto border border-gray-200"
+              className="flex flex-col items-center bg-white border border-yellow-500 backdrop-blur-lg shadow-xl rounded-3xl p-10 text-center max-w-6xl mx-auto border border-gray-200"
             >
               <FaQuoteLeft className="text-[#1a3c4c] text-4xl mb-6 opacity-80" />
               <p className="text-lg text-gray-700 font-medium leading-relaxed mb-8 italic">

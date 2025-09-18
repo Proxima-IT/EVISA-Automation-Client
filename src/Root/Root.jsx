@@ -8,6 +8,7 @@ const Root = () => {
     // console.log(location,location.pathname)
     return (
         <div className='overflow-x-hidden  dark:bg-[#1a3c4c]'>
+            <Header ></Header>
             {/* {
                 location.pathname !== "*" && <Header></Header>
             } */}

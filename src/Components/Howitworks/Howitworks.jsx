@@ -31,13 +31,13 @@ const Howitworks = () => {
     <div>
       <section className=" py-10">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-5xl font-bold mb-12">
-            How It <span className="text-teal-800">Works</span>
+          <h2 className="text-2xl md:text-5xl font-bold mb-12 text-black dark:text-white">
+            How It <span className="text-teal-800 dark:text-teal-300">Works</span>
           </h2>
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             {steps.map((step, idx) => (
               <div key={step.id} className="relative flex-1">
-                <div className="bg-white rounded-2xl border border-yellow-300 shadow-lg p-6 hover:shadow-xl transition">
+                <div className="bg-white rounded-2xl  border border-yellow-300 shadow-lg p-6 hover:shadow-xl transition">
                   <div className="text-4xl mb-4">{step.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
                   <p className="text-gray-600">{step.desc}</p>
