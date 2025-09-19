@@ -9,8 +9,8 @@ import Profile from "../Pages/DashboardPages/Profile";
 import AutomationSettings from "../Pages/DashboardPages/AutomationSettings";
 import DashboardDefault from "../Root/DefaultDashboard";
 import AboutUs from "../Pages/About Us/AboutUs";
-import ProfileSettings from "../Pages/ProfileSettings/ProfileSettings";
-import Pricing from "../Pages/Pricing/Pricing";
+
+
 import ProxyList from "../Pages/DashboardPages/proxyList";
 import CheckAppointment from "../Pages/DashboardPages/CheckAppointment";
 import Register from "../Pages/Register/Register";
@@ -34,19 +34,8 @@ export const router = createBrowserRouter([
         path: "/aboutUs",
         Component: AboutUs,
       },
-      {
-        path: "/profileSettings",
-        element: (
-          <PrivateRoute>
-            {" "}
-            <ProfileSettings></ProfileSettings>{" "}
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/pricing",
-        Component: Pricing,
-      },
+      
+     
       {
         path: "/login",
         Component: Login,

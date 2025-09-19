@@ -18,7 +18,7 @@ const AdminLayout = () => {
       <div className="!bg-black">
         <Header solid></Header>
       </div>
-      <div className="min-h-[500px] pt-20 bg-teal-50  dark:bg-gray-700 py-5  flex flex-col lg:flex-row gap-5 mx-auto w-full px-5">
+      <div className="min-h-[500px] pt-20 bg-[#F9FAFB]  dark:bg-gray-700 py-5  flex flex-col lg:flex-row gap-5 mx-auto w-full px-5">
         <div className="lg:w-3/12 w-full mt-10">
           <Sidenav></Sidenav>
         </div>

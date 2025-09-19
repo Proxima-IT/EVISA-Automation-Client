@@ -61,7 +61,7 @@ const Header = ({solid}) => {
           </div>
           <ul
             tabIndex={0}
-            className="text-[#1a3c4c] dark:text-white text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="text-[#1a3c4c] dark:text-white space-y-3 text-xl font-bold menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-4 shadow"
           >
             {user && user?.email ? (
               <>
