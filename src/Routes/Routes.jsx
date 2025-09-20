@@ -10,7 +10,6 @@ import AutomationSettings from "../Pages/DashboardPages/AutomationSettings";
 import DashboardDefault from "../Root/DefaultDashboard";
 import AboutUs from "../Pages/About Us/AboutUs";
 
-
 import ProxyList from "../Pages/DashboardPages/proxyList";
 import CheckAppointment from "../Pages/DashboardPages/CheckAppointment";
 import Register from "../Pages/Register/Register";
@@ -34,8 +33,7 @@ export const router = createBrowserRouter([
         path: "/aboutUs",
         Component: AboutUs,
       },
-      
-     
+
       {
         path: "/login",
         Component: Login,
@@ -48,7 +46,10 @@ export const router = createBrowserRouter([
         path: "/admin",
         Component: AdminLayout,
         children: [
-          
+          {
+            index: true, // default route
+            element: <Navigate to="add-client" replace />,
+          },
           {
             path: "add-client",
             Component: AddClient,

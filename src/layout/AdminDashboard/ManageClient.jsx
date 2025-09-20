@@ -9,13 +9,15 @@ const ManageClient = () => {
   const [clients, setClients] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/clients?page=${page}&limit=10`)
+      .get(`${import.meta.env.VITE_API_URL}/visa?page=${page}&limit=10`)
       .then((res) => {
         console.log(res.data.data);
         setClients(res.data.data);
+        setLoading(false);
         setTotalPages(res.data.pagination.totalPages);
       });
   }, [page]);
@@ -31,7 +33,7 @@ const ManageClient = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`${import.meta.env.VITE_API_URL}/clients/${id}`);
+        axios.delete(`${import.meta.env.VITE_API_URL}/visa/${id}`);
         Swal.fire({
           title: "Client Deleted!",
           text: "This client data has been deleted.",
@@ -40,6 +42,14 @@ const ManageClient = () => {
       }
     });
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center mt-5">
+        <div className="w-16 h-16  border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -59,18 +69,18 @@ const ManageClient = () => {
                 <col />
                 <col />
               </colgroup>
-              <thead className="bg-teal-300  rounded-md whitespace-nowrap text-black">
-                <tr className="text-center lg:text-base text-sm ">
+              <thead className="bg-gray-600  rounded-md whitespace-nowrap text-white">
+                <tr className="text-center lg:text-lg text-sm ">
                   <th className="p-3">SL.</th>
-                  <th className="p-3">Name</th>
+                  <th className="p-3">FirstName</th>
                   <th className="p-3">Email</th>
                   <th className="p-3">Passport number</th>
                   <th className="p-3">Date of birth</th>
                   <th className="p-3">Phone number</th>
-                  <th className="p-3">Status</th>
-                  <th className="p-3">Appointment date</th>
-                  <th className="p-3">Appointment time</th>
-                  <th className="p-3">Confirmation Id</th>
+                  <th className="p-3">ConsularPost</th>
+                  <th className="p-3">OriginalNationality</th>
+                  {/* <th className="p-3">Appointment time</th> */}
+                  {/* <th className="p-3">Confirmation Id</th> */}
                   <th className="p-3">Action</th>
                 </tr>
               </thead>
@@ -78,24 +88,30 @@ const ManageClient = () => {
                 {clients.map((client, index) => (
                   <tr
                     key={client._id}
-                    className="w-full border-b border-opacity-20 text-center text-black bg-teal-100 border-gray-700 "
+                    className="w-full border-b border-opacity-20 text-center text-black bg-gray-100 border-gray-700 "
                   >
                     <td className="p-3">{(page - 1) * 10 + (index + 1)}</td>
-                    <td className="p-3">{client.name}</td>
-                    <td className="p-3">{client.email}</td>
+                    <td className="p-3">{client.firstName}</td>
+                    <td className="p-3">{client.requestorEmail}</td>
                     <td className="p-3">{client.passportNumber}</td>
-                    <td className="p-3">{client.dob}</td>
-                    <td className="p-3">{client.phone}</td>
-                    <td className="p-3">{client.status}</td>
-                    <td className="p-3">{client.appointment?.date}</td>
-                    <td className="p-3">{client.appointment?.time}</td>
-                    <td className="p-3">
+                    <td className="p-3">{client.dateOfBirth}</td>
+                    <td className="p-3">{client.requestorPhone}</td>
+                    <td className="p-3">{client.consularPost}</td>
+                    <td className="p-3">{client.originalNationality}</td>
+                    {/* <td className="p-3">{client.appointment?.time}</td> */}
+                    {/* <td className="p-3">
                       {client.appointment?.confirmationId}
-                    </td>
+                    </td> */}
 
-                    <td className="p-3 flex flex-col items-center">
+                    <td className="p-3 flex gap-3 items-center">
+                      <button
+                        onClick={() => {}}
+                        className="flex items-center gap-2 bg-green-600 rounded-md px-3 py-1 text-white mb-2 font-bold cursor-pointer"
+                      >
+                        Activate
+                      </button>
                       <Link to={`/admin/edit-client/${client._id}`}>
-                        <button className="flex items-center bg-green-300 rounded-md px-3 py-1 text-black mb-3 font-bold cursor-pointer">
+                        <button className="flex gap-2 items-center bg-blue-300 rounded-md px-3 py-1 text-black mb-3 font-bold cursor-pointer">
                           Edit <FiEdit />
                         </button>
                       </Link>
@@ -103,7 +119,7 @@ const ManageClient = () => {
                         onClick={() => {
                           handleDelete(client._id);
                         }}
-                        className="flex items-center bg-orange-300 rounded-md px-3 py-1 text-black mb-2 font-bold cursor-pointer"
+                        className="flex items-center gap-2 bg-orange-300 rounded-md px-3 py-1 text-black mb-2 font-bold cursor-pointer"
                       >
                         Delete <MdDelete />
                       </button>

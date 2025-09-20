@@ -21,7 +21,7 @@
 nav > a.active {
   border-left: 6px solid rgb(226, 141, 43); /* replace with actual color */
   font-weight: 600; /* Tailwind's font-semibold */
-  background-color: #e3e9f6;
+  background-color: #cbd8f3;
 }
 
 .bgimage{

@@ -23,15 +23,7 @@ const Footer = () => {
             <Link to="/aboutUs" className="hover:text-blue-400 transition">
               About Us
             </Link>
-            <Link to="/pricing" className="hover:text-blue-400 transition">
-              Pricing
-            </Link>
-            <Link
-              to="/profileSettings"
-              className="hover:text-blue-400 transition"
-            >
-              Profile
-            </Link>
+           
           </nav>
 
           {/* Social Icons */}
