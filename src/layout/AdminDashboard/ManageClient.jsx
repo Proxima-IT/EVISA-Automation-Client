@@ -104,12 +104,7 @@ const ManageClient = () => {
                     </td> */}
 
                     <td className="p-3 flex gap-3 items-center">
-                      <button
-                        onClick={() => {}}
-                        className="flex items-center gap-2 bg-green-600 rounded-md px-3 py-1 text-white mb-2 font-bold cursor-pointer"
-                      >
-                        Activate
-                      </button>
+                      
                       <Link to={`/admin/edit-client/${client._id}`}>
                         <button className="flex gap-2 items-center bg-blue-300 rounded-md px-3 py-1 text-black mb-3 font-bold cursor-pointer">
                           Edit <FiEdit />

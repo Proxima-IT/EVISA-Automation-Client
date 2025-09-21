@@ -4,14 +4,24 @@ import "./Header.css";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Authentication/AuthContext";
 import { FiLogOut } from "react-icons/fi";
-import { FaGlobeEurope } from "react-icons/fa";
+import { FaGlobeEurope, FaRobot } from "react-icons/fa";
 import defaultPic from "../../assets/defaultUserIcon.jpg";
 import { ThemeContext } from "../../Context/ThemeContext";
 
-const Header = ({solid}) => {
+const Header = ({ solid }) => {
   const { user, handleLogout } = useContext(AuthContext);
 
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const [isClicked, setIsClicked] = useState(false);
+  const clickSoundUrl = "https://www.example.com/sounds/click.mp3";
+
+  const handleClick = () => {
+    setIsClicked(true);
+    const audio = new Audio(clickSoundUrl);
+    audio.play();
+    setTimeout(() => setIsClicked(false), 200);
+  };
 
   // console.log(theme)
 
@@ -23,22 +33,28 @@ const Header = ({solid}) => {
       .catch(() => {});
   };
 
-   const [scrolled, setScrolled] = useState(false);
-  
-    useEffect(() => {
-      const onScroll = () => {
-        setScrolled(window.scrollY > window.innerHeight);
-      };
-      window.addEventListener("scroll", onScroll);
-      return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+  const [scrolled, setScrolled] = useState(false);
 
-    const location = useLocation();
-  const isLoginPage = location.pathname === "/login" 
-  const isSignupPage = location.pathname === "/register"
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > window.innerHeight);
+    };
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const location = useLocation();
+  const isLoginPage = location.pathname === "/login";
+  const isSignupPage = location.pathname === "/register";
 
   return (
-    <div className={`lg:px-10 navbar text-white shadow-md  ${scrolled || solid || isLoginPage || isSignupPage ? "bg-teal-700" : "bg-gray-800/8"} backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}>
+    <div
+      className={`lg:px-10 navbar text-white shadow-md  ${
+        scrolled || solid || isLoginPage || isSignupPage
+          ? "bg-teal-700"
+          : "bg-gray-800/8"
+      } backdrop-blur-md p-2 lg:p-5 dark:bg-gray-800 dark:text-white fixed  z-30 `}
+    >
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -95,13 +111,12 @@ const Header = ({solid}) => {
           </ul>
         </div>
         {/* Logo */}
-       <Link to="/">
-        <div className="flex items-center gap-2 text-lg lg:text-2xl font-bold text-white dark:text-[#eff4f7]">
-          <FaGlobeEurope className="text-blue-400" />
-          VisaAutomated
-        </div>
-       </Link>
-       
+        <Link to="/">
+          <div className="flex items-center gap-2 text-xs lg:text-2xl font-bold text-white dark:text-[#eff4f7]">
+            <FaGlobeEurope className="text-blue-400" />
+            VisaAutomated
+          </div>
+        </Link>
       </div>
 
       {/* Large screen */}
@@ -143,7 +158,17 @@ const Header = ({solid}) => {
           )}
         </ul>
       </div>
-      <div className="navbar-end">
+
+      <div className="navbar-end flex flex-col gap-2 sm:flex-row sm:gap-4">
+        <button
+          onClick={handleClick}
+          className={`flex items-center gap-2 bg-green-600 text-sm  rounded-md px-3 lg:px-5 py-2 text-white font-bold cursor-pointer transition-all duration-300 transform hover:bg-green-700 hover:scale-105 active:scale-95 shadow-md ${
+            isClicked ? "ring-4 ring-green-300" : ""
+          }`}
+        >
+          <FaRobot className="text-xl" />
+          Activate Bot
+        </button>
         <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded cursor-pointer"

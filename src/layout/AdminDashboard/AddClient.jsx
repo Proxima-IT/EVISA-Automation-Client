@@ -485,8 +485,8 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   >
                     <option value="">Select</option>
-                    <option value="yes">YES</option>
-                    <option value="no">NO</option>
+                    <option value={"yes" || "YES"}>YES</option>
+                    <option value={"no" || "NO"}>NO</option>
                   </select>
                 </div>
 
@@ -787,8 +787,8 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   >
                     <option value="">Select</option>
-                    <option value="yes">YES</option>
-                    <option value="no">NO</option>
+                     <option value={"yes" || "YES"}>YES</option>
+                    <option value={"no" || "NO"}>NO</option>
                   </select>
                 </div>
 
@@ -859,8 +859,8 @@ const AddClient = () => {
                              text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   >
                     <option value="">Select</option>
-                    <option value="yes">YES</option>
-                    <option value="no">NO</option>
+                     <option value={"yes" || "YES"}>YES</option>
+                    <option value={"no" || "NO"}>NO</option>
                   </select>
                 </div>
 

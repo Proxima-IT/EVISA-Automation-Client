@@ -12,6 +12,7 @@ const EditClient = () => {
   const [loading, setLoading] = useState(true);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
+
   const tabs = [
     "Identification",
     "Journey Doc.",
@@ -23,6 +24,7 @@ const EditClient = () => {
 
   const { id } = useParams();
   console.log(id);
+
   const {
     register,
     control,
@@ -36,6 +38,7 @@ const EditClient = () => {
     axios.get(`${import.meta.env.VITE_API_URL}/visa/${id}`).then((res) => {
       console.log(res.data.data);
       setClient(res.data.data);
+      reset(res.data.data);
       // setLoading(false)
     });
   }, []);
@@ -549,7 +552,7 @@ const EditClient = () => {
                       <span className="text-red-600">*</span>
                     </label>
                     <input
-                      type="text"
+                      type="date"
                       {...register("validityEnd")}
                       defaultValue={client?.validityEnd}
                       placeholder=""
@@ -645,8 +648,8 @@ const EditClient = () => {
                       <span className="text-xl">(1) </span>
                       <input
                         type="text"
-                        {...register("purposeOfTravel.field1")}
-                        defaultValue={client?.purposeOfTravel.field1}
+                        {...register("purposeOfTravel?.field1")}
+                        defaultValue={client?.purposeOfTravel?.field1}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                                     focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -660,7 +663,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("purposeOfTravel.field2")}
-                        defaultValue={client?.purposeOfTravel.field2}
+                        defaultValue={client?.purposeOfTravel?.field2}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                                     focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -681,7 +684,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("memberStateOfDestination.field1")}
-                        defaultValue={client?.memberStateOfDestination.field1}
+                        defaultValue={client?.memberStateOfDestination?.field1}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border    
                                  focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -695,7 +698,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("memberStateOfDestination.field2")}
-                        defaultValue={client?.memberStateOfDestination.field2}
+                        defaultValue={client?.memberStateOfDestination?.field2}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
                         
@@ -981,10 +984,10 @@ const EditClient = () => {
                       defaultValue={client?.referenceInTheNationalTerritory}
                       placeholder=""
                       className="w-full h-10  px-4 py-2 rounded-lg border     
-                                        focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
-                                        shadow-sm transition-all duration-200 ease-in-out 
-                                        placeholder-gray-400 dark:placeholder-gray-500 
-                                        text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
+                                  focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
+                                  shadow-sm transition-all duration-200 ease-in-out 
+                                  placeholder-gray-400 dark:placeholder-gray-500 
+                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                     />
                   </div>
 
@@ -1003,7 +1006,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingPerson.name")}
-                      defaultValue={client?.invitingPerson.name}
+                      defaultValue={client?.invitingPerson?.name}
                       // value={data.email}
 
                       placeholder=""
@@ -1023,7 +1026,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingPerson.address")}
-                       defaultValue={client?.invitingPerson.address}
+                       defaultValue={client?.invitingPerson?.address}
 
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1042,7 +1045,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingPerson.country")}
-                       defaultValue={client?.invitingPerson.country}
+                       defaultValue={client?.invitingPerson?.country}
 
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1065,7 +1068,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingCompany.name")}
-                      defaultValue={client?.invitingCompany.name}
+                      defaultValue={client?.invitingCompany?.name}
 
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1084,7 +1087,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingCompany.address")}
-                      defaultValue={client?.invitingCompany.address}
+                      defaultValue={client?.invitingCompany?.address}
 
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1103,7 +1106,7 @@ const EditClient = () => {
                     <input
                       type="text"
                       {...register("invitingCompany.country")}
-                     defaultValue={client?.invitingCompany.country}
+                     defaultValue={client?.invitingCompany?.country}
 
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1127,7 +1130,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("travelExpenses.applicant.field1")}
-                        defaultValue={client?.travelExpenses.applicant.field1}
+                        defaultValue={client?.travelExpenses?.applicant?.field1}
 
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1139,7 +1142,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("travelExpenses.applicant.field2")}
-                         defaultValue={client?.travelExpenses.applicant.field2}
+                         defaultValue={client?.travelExpenses?.applicant?.field2}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                                         focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -1157,7 +1160,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("travelExpenses.sponsor.field1")}
-                        defaultValue={client?.travelExpenses.sponsor.field1}
+                        defaultValue={client?.travelExpenses?.sponsor?.field1}
 
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
@@ -1169,7 +1172,7 @@ const EditClient = () => {
                       <input
                         type="text"
                         {...register("travelExpenses.sponsor.field2")}
-                        defaultValue={client?.travelExpenses.sponsor.field2}
+                        defaultValue={client?.travelExpenses?.sponsor?.field2}
                         placeholder=""
                         className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                                         focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
