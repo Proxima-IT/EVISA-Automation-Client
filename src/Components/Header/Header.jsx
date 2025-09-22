@@ -23,7 +23,7 @@ const Header = ({ solid }) => {
     setTimeout(() => setIsClicked(false), 200);
   };
 
-  // console.log(theme)
+
 
   const handleSignOut = () => {
     handleLogout()
@@ -160,15 +160,18 @@ const Header = ({ solid }) => {
       </div>
 
       <div className="navbar-end flex flex-col gap-2 sm:flex-row sm:gap-4">
-        <button
-          onClick={handleClick}
-          className={`flex items-center gap-2 bg-green-600 text-sm  rounded-md px-3 lg:px-5 py-2 text-white font-bold cursor-pointer transition-all duration-300 transform hover:bg-green-700 hover:scale-105 active:scale-95 shadow-md ${
-            isClicked ? "ring-4 ring-green-300" : ""
-          }`}
-        >
-          <FaRobot className="text-xl" />
-          Activate Bot
-        </button>
+        {user && (
+          <button
+            onClick={handleClick}
+            className={`flex items-center gap-2 bg-green-600 text-sm  rounded-md px-3 lg:px-5 py-2 text-white font-bold cursor-pointer transition-all duration-300 transform hover:bg-green-700 hover:scale-105 active:scale-95 shadow-md ${
+              isClicked ? "ring-4 ring-green-300" : ""
+            }`}
+          >
+            <FaRobot className="text-xl" />
+            Activate Bot
+          </button>
+        )}
+
         <button
           onClick={toggleTheme}
           className="px-4 py-2 rounded cursor-pointer"

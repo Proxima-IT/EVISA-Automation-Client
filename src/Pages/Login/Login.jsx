@@ -23,8 +23,8 @@ const Login = () => {
   return (
     <div className="hero pb-20 pt-28 bg-teal-50 dark:bg-gray-700">
      
-      <div className="flex items-center justify-center min-h-screen   px-4">
-        <div className="w-full  bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10">
+      <div className="flex items-center justify-center min-h-screen  px-4">
+        <div className="w-full mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10">
           {/* Header */}
           <div className="text-center mb-6">
             <h1 className="text-4xl font-bold text-teal-800  dark:text-teal-200">Login</h1>

@@ -67,7 +67,7 @@ const AddClient = () => {
 
   return (
     <div className="w-full border border-[#00B5FF] rounded-lg p-6 font-montserrat mb-4">
-      <div className="text-lg font-roboto text-center font-bold text-teal-800 rounded-md  mb-4 border-2 border-teal-600 w-full lg:w-1/4 px-3 py-1 mx-auto">
+      <div className="text-lg font-roboto text-center font-bold text-teal-800 dark:text-white rounded-md  mb-4 border-2 border-teal-600 w-full lg:w-1/4 px-3 py-1 mx-auto">
         Add New Client
       </div>
 
@@ -105,9 +105,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("consularPost")}
-                    // value={data.email}
-
+                    {...register("consularPost", {required:"Consular Post is required"})}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -115,6 +113,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.consularPost && (
+                    <span className="text-red-600 text-sm">
+                      {errors.consularPost.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* surname  */}
@@ -126,8 +129,6 @@ const AddClient = () => {
                   <input
                     type="text"
                     {...register("surname")}
-                    // value={data.email}
-
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -787,7 +788,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   >
                     <option value="">Select</option>
-                     <option value={"yes" || "YES"}>YES</option>
+                    <option value={"yes" || "YES"}>YES</option>
                     <option value={"no" || "NO"}>NO</option>
                   </select>
                 </div>
@@ -859,7 +860,7 @@ const AddClient = () => {
                              text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   >
                     <option value="">Select</option>
-                     <option value={"yes" || "YES"}>YES</option>
+                    <option value={"yes" || "YES"}>YES</option>
                     <option value={"no" || "NO"}>NO</option>
                   </select>
                 </div>
@@ -1130,7 +1131,7 @@ const AddClient = () => {
               </div>
             </TabPanel>
 
-            <TabPanel className="text-center">
+            <TabPanel className="text-center text-black dark:text-white">
               Attachments are optional.
             </TabPanel>
           </TabPanels>
@@ -1145,7 +1146,7 @@ const AddClient = () => {
               }}
               disabled={selectedIndex === 0}
               className={classNames(
-                "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center",
+                "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center dark:text-white",
                 selectedIndex === 0
                   ? " text-gray-900 cursor-not-allowed"
                   : " text-teal-900 hover:bg-teal-200"
@@ -1162,7 +1163,7 @@ const AddClient = () => {
               }}
               disabled={selectedIndex === tabs.length - 1}
               className={classNames(
-                "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center",
+                "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center dark:text-white",
                 selectedIndex === tabs.length - 1
                   ? " text-gray-900 cursor-not-allowed"
                   : " text-teal-900 hover:bg-teal-200"

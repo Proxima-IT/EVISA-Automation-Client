@@ -4,7 +4,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 
 import DashboardRoot from "../Root/DashboardRoot";
-import PrivateRoute from "./PrivateRoute";
+
 import Profile from "../Pages/DashboardPages/Profile";
 import AutomationSettings from "../Pages/DashboardPages/AutomationSettings";
 import DashboardDefault from "../Root/DefaultDashboard";
@@ -17,6 +17,7 @@ import AdminLayout from "../layout/AdminDashboard/AdminLayout";
 import AddClient from "../layout/AdminDashboard/AddClient";
 import ManageClient from "../layout/AdminDashboard/ManageClient";
 import EditClient from "../layout/AdminDashboard/EditClient";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -42,28 +43,33 @@ export const router = createBrowserRouter([
         path: "/register",
         Component: Register,
       },
-      {
-        path: "/admin",
-        Component: AdminLayout,
-        children: [
-          {
-            index: true, // default route
-            element: <Navigate to="add-client" replace />,
-          },
-          {
-            path: "add-client",
-            Component: AddClient,
-          },
-          {
-            path: "manage-client",
-            Component: ManageClient,
-          },
-          {
-            path: "edit-client/:id",
-            Component: EditClient,
-          },
-        ],
-      },
+     {
+  path: "/admin",
+  element: (
+    <PrivateRoute>
+      <AdminLayout />
+    </PrivateRoute>
+  ),
+  children: [
+    {
+      index: true,
+      element: <Navigate to="add-client" replace />,
+    },
+    {
+      path: "add-client",
+      element: <AddClient />,
+    },
+    {
+      path: "manage-client",
+      element: <ManageClient />,
+    },
+    {
+      path: "edit-client/:id",
+      element: <EditClient />,
+    },
+  ],
+}
+
     ],
   },
 
