@@ -128,7 +128,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("surname")}
+                    {...register("surname" , {required:"Surname is required"})}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -136,6 +136,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.surname && (
+                    <span className="text-red-600 text-sm">
+                      {errors.surname.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Surname(s) at birth  */}
@@ -146,7 +151,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("surnameAtBirth")}
+                    {...register("surnameAtBirth" , {required:"Surname(s) at birth is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -156,6 +161,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.surnameAtBirth && (
+                    <span className="text-red-600 text-sm">
+                      {errors.surnameAtBirth.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* First name  */}
@@ -166,7 +176,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("firstName")}
+                    {...register("firstName" , {required:"First name is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -177,6 +187,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.firstName && (
+                    <span className="text-red-600 text-sm">
+                      {errors.firstName.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Date of birth(yyyy/mm/dd)  */}
@@ -188,7 +203,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("dateOfBirth")}
+                    {...register("dateOfBirth" , {required:"Date of birth is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -199,6 +214,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.dateOfBirth && (
+                    <span className="text-red-600 text-sm">
+                      {errors.dateOfBirth.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Place of birth  */}
@@ -209,7 +229,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("placeOfBirth")}
+                    {...register("placeOfBirth" , {required:"Place of birth is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -220,6 +240,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.placeOfBirth && (
+                    <span className="text-red-600 text-sm">
+                      {errors.placeOfBirth.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Country of birth  */}
@@ -230,7 +255,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("countryOfBirth")}
+                    {...register("countryOfBirth" , {required:"Country of birth is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -241,6 +266,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                   {errors.countryOfBirth && (
+                    <span className="text-red-600 text-sm">
+                      {errors.countryOfBirth.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Current nationality  */}
@@ -251,7 +281,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("currentNationality")}
+                    {...register("currentNationality" , {required:"Current nationality is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -261,6 +291,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.currentNationality && (
+                    <span className="text-red-600 text-sm">
+                      {errors.currentNationality.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  Original nationality  */}
@@ -271,7 +306,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("originalNationality")}
+                    {...register("originalNationality" , {required:"Original nationality is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -282,6 +317,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                   {errors.originalNationality && (
+                    <span className="text-red-600 text-sm">
+                      {errors.originalNationality.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   Sex  */}
@@ -292,7 +332,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("sex")}
+                    {...register("sex" , {required:"Sex is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -303,6 +343,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                   {errors.sex && (
+                    <span className="text-red-600 text-sm">
+                      {errors.sex.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   Marital status  */}
@@ -313,7 +358,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("maritalStatus")}
+                    {...register("maritalStatus" , {required:"Marital status is required"})}
                     // value={data.email}
 
                     placeholder=""
@@ -324,6 +369,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.maritalStatus && (
+                    <span className="text-red-600 text-sm">
+                      {errors.maritalStatus.message}
+                    </span>
+                  )}
                 </div>
               </div>
             </TabPanel>
@@ -337,7 +387,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("typeOfPassport")}
+                    {...register("typeOfPassport" , {required:"Type of passport is required"})}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border           
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -345,6 +395,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.typeOfPassport && (
+                    <span className="text-red-600 text-sm">
+                      {errors.typeOfPassport.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   Passport number  */}

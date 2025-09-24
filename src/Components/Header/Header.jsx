@@ -195,14 +195,14 @@ const Header = ({ solid }) => {
                     Hi, {user?.displayName || "User"}
                   </h1>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     className="font-bold text-lg text-blue-900"
                     to="/profileSettings"
                   >
                     Profile Settings
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <button
                     onClick={handleSignOut}

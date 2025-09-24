@@ -1,14 +1,17 @@
 import React, { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../Authentication/AuthContext";
 import axios from "axios";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 const Register = () => {
   const { handleRegister, handleUpdateProfile, setUser } =
     useContext(AuthContext);
   const navigate = useNavigate();
+
+   const [showPassword, setShowPassword] = useState(false);
 
   const {
     register,
@@ -166,20 +169,30 @@ const Register = () => {
             </div>
 
             {/* Password */}
-            <div>
+            <div className="relative">
               <label
                 htmlFor="password"
                 className="block text-lg font-medium mb-2 text-gray-700 dark:text-gray-300"
               >
                 Password
               </label>
+              
               <input
-                type="password"
+               type={showPassword ? "text" : "password"}
+               
                 id="password"
                 placeholder="Enter your password"
                 {...register("password", { required: "Password is required" })}
-                className="w-full px-4 py-3 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
+                className=" w-full px-4 py-3 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
               />
+               <span
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+                className=" absolute right-5 top-[52px]"
+              >
+                {showPassword ? <IoMdEye /> : <IoMdEyeOff />}
+              </span>
               {errors.password && (
                 <p className="text-red-500 text-sm mt-1">
                   {errors.password.message}
@@ -215,6 +228,7 @@ const Register = () => {
           </form>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

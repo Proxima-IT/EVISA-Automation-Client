@@ -1,13 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Authentication/AuthContext";
-import { toast } from "react-toastify";
+import { toast , ToastContainer} from "react-toastify";
 import { NavLink, useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import Header from "../../Components/Header/Header";
 // import loginImage from '../../assets/loginImage.png'
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 
 const Login = () => {
-  const { handleLogin } = useContext(AuthContext);
+  const { handleLogin, setUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -15,19 +17,37 @@ const Login = () => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    try {
+      const result = await handleLogin(data.email, data.password);
+      const user = result.user;
+      setUser(user);
+
+      toast.success("Account login successful!");
+      reset();
+    
+      setTimeout(() => navigate("/"), 2000);
+    } catch (error) {
+      console.error(error);
+      toast.error("Invalid credentials. Please try again.");
+    }
+  };
 
   return (
     <div className="hero pb-20 pt-28 bg-teal-50 dark:bg-gray-700">
-     
       <div className="flex items-center justify-center min-h-screen  px-4">
         <div className="w-full mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-lg p-10">
           {/* Header */}
           <div className="text-center mb-6">
-            <h1 className="text-4xl font-bold text-teal-800  dark:text-teal-200">Login</h1>
+            <h1 className="text-4xl font-bold text-teal-800  dark:text-teal-200">
+              Login
+            </h1>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
               Welcome back! Please login to continue.
             </p>
@@ -64,7 +84,7 @@ const Login = () => {
             </div>
 
             {/* Password */}
-            <div>
+            <div className="relative">
               <div className="flex justify-between items-center mb-2">
                 <label
                   htmlFor="password"
@@ -80,7 +100,7 @@ const Login = () => {
                 </NavLink>
               </div>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 placeholder="Enter your password"
                 {...register("password", {
@@ -92,6 +112,14 @@ const Login = () => {
                 })}
                 className="w-full px-4 py-3 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-[#2D336B] focus:outline-none"
               />
+              <span
+                onClick={() => {
+                  setShowPassword(!showPassword);
+                }}
+                className=" absolute right-5 top-[52px]"
+              >
+                {showPassword ? <IoMdEye /> : <IoMdEyeOff />}
+              </span>
               {errors.password && (
                 <p className="text-sm text-red-500 mt-1">
                   {errors.password.message}
@@ -132,18 +160,20 @@ const Login = () => {
               <div className="h-px w-full bg-gray-300 dark:bg-gray-600"></div>
             </div>
 
-           
-
             {/* Register link */}
             <p className="text-center text-gray-600 dark:text-gray-400 text-sm">
               Don’t have an account?{" "}
-              <NavLink to="/register" className="underline text-[#2D336B] dark:text-white">
+              <NavLink
+                to="/register"
+                className="underline text-[#2D336B] dark:text-white"
+              >
                 Register here
               </NavLink>
             </p>
           </form>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
