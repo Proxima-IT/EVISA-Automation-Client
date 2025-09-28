@@ -86,7 +86,7 @@ const EditClient = () => {
   return (
     <div>
       <div className="w-full border border-teal-800 rounded-lg p-6">
-        <div className="text-lg font-roboto text-center font-bold text-teal-700 mb-4 border-2 border-teal-800 w-full lg:w-1/4 px-3 py-1 mx-auto rounded-md">
+        <div className="text-lg font-roboto text-center font-bold text-teal-700 dark:text-white mb-4 border-2 border-teal-800 dark:border-teal-300 w-full lg:w-1/4 px-3 py-1 mx-auto rounded-md">
           Edit Client Data
         </div>
 
@@ -1200,7 +1200,7 @@ const EditClient = () => {
                 }}
                 disabled={selectedIndex === 0}
                 className={classNames(
-                  "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center",
+                  "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center dark:text-white",
                   selectedIndex === 0
                     ? " text-gray-900 cursor-not-allowed"
                     : " text-teal-900 hover:bg-teal-200"
@@ -1217,7 +1217,7 @@ const EditClient = () => {
                 }}
                 disabled={selectedIndex === tabs.length - 1}
                 className={classNames(
-                  "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center",
+                  "px-4 py-2 rounded-lg  transition font-bold text-xl flex items-center dark:text-white",
                   selectedIndex === tabs.length - 1
                     ? " text-gray-900 cursor-not-allowed"
                     : " text-teal-900 hover:bg-teal-200"

@@ -105,7 +105,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("consularPost", {required:"Consular Post is required"})}
+                    {...register("consularPost", {
+                      required: "Consular Post is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -114,7 +116,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.consularPost && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.consularPost.message}
                     </span>
                   )}
@@ -128,7 +130,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("surname" , {required:"Surname is required"})}
+                    {...register("surname", {
+                      required: "Surname is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -137,7 +141,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.surname && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.surname.message}
                     </span>
                   )}
@@ -151,7 +155,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("surnameAtBirth" , {required:"Surname(s) at birth is required"})}
+                    {...register("surnameAtBirth", {
+                      required: "Surname(s) at birth is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -162,7 +168,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.surnameAtBirth && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.surnameAtBirth.message}
                     </span>
                   )}
@@ -176,7 +182,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("firstName" , {required:"First name is required"})}
+                    {...register("firstName", {
+                      required: "First name is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -188,7 +196,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.firstName && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.firstName.message}
                     </span>
                   )}
@@ -203,7 +211,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("dateOfBirth" , {required:"Date of birth is required"})}
+                    {...register("dateOfBirth", {
+                      required: "Date of birth is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -215,7 +225,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.dateOfBirth && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.dateOfBirth.message}
                     </span>
                   )}
@@ -229,7 +239,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("placeOfBirth" , {required:"Place of birth is required"})}
+                    {...register("placeOfBirth", {
+                      required: "Place of birth is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -241,7 +253,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.placeOfBirth && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.placeOfBirth.message}
                     </span>
                   )}
@@ -255,7 +267,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("countryOfBirth" , {required:"Country of birth is required"})}
+                    {...register("countryOfBirth", {
+                      required: "Country of birth is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -266,8 +280,8 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
-                   {errors.countryOfBirth && (
-                    <span className="text-red-600 text-sm">
+                  {errors.countryOfBirth && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.countryOfBirth.message}
                     </span>
                   )}
@@ -281,7 +295,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("currentNationality" , {required:"Current nationality is required"})}
+                    {...register("currentNationality", {
+                      required: "Current nationality is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -292,7 +308,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.currentNationality && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.currentNationality.message}
                     </span>
                   )}
@@ -306,7 +322,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("originalNationality" , {required:"Original nationality is required"})}
+                    {...register("originalNationality", {
+                      required: "Original nationality is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -317,8 +335,8 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
-                   {errors.originalNationality && (
-                    <span className="text-red-600 text-sm">
+                  {errors.originalNationality && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.originalNationality.message}
                     </span>
                   )}
@@ -332,7 +350,7 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("sex" , {required:"Sex is required"})}
+                    {...register("sex", { required: "Sex is required" })}
                     // value={data.email}
 
                     placeholder=""
@@ -343,8 +361,8 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
-                   {errors.sex && (
-                    <span className="text-red-600 text-sm">
+                  {errors.sex && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.sex.message}
                     </span>
                   )}
@@ -358,7 +376,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("maritalStatus" , {required:"Marital status is required"})}
+                    {...register("maritalStatus", {
+                      required: "Marital status is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -370,7 +390,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.maritalStatus && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.maritalStatus.message}
                     </span>
                   )}
@@ -387,7 +407,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("typeOfPassport" , {required:"Type of passport is required"})}
+                    {...register("typeOfPassport", {
+                      required: "Type of passport is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border           
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -396,7 +418,7 @@ const AddClient = () => {
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
                   {errors.typeOfPassport && (
-                    <span className="text-red-600 text-sm">
+                    <span className="text-red-600 dark:text-red-300 text-sm">
                       {errors.typeOfPassport.message}
                     </span>
                   )}
@@ -409,7 +431,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("passportNumber")}
+                    {...register("passportNumber", {
+                      required: "Passport number is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
                  
@@ -418,6 +442,11 @@ const AddClient = () => {
                              placeholder-gray-400 dark:placeholder-gray-500 
                              text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.passportNumber && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.passportNumber.message}
+                    </span>
+                  )}
                 </div>
                 {/*   Date of Issue(yyyy/mm/dd)  */}
                 <div className="col-span-2 md:col-span-1">
@@ -427,15 +456,21 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("dateOfIssue")}
+                    {...register("dateOfIssue", {
+                      required: "Date of Issue is required",
+                    })}
                     placeholder=""
-                    className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
-                         
+                    className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                         
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
                            shadow-sm transition-all duration-200 ease-in-out 
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.dateOfIssue && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.dateOfIssue.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   Valid until(yyyy/mm/dd)  */}
@@ -446,7 +481,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("validUntil")}
+                    {...register("validUntil", {
+                      required: "Valid until is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -454,6 +491,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.validUntil && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.validUntil.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  Issued by  */}
@@ -463,7 +505,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("issuedBy")}
+                    {...register("issuedBy", {
+                      required: "Issued by is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                         
                       focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -471,6 +515,11 @@ const AddClient = () => {
                       placeholder-gray-400 dark:placeholder-gray-500 
                       text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.issuedBy && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.issuedBy.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*    Requestor's email  */}
@@ -480,7 +529,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="email"
-                    {...register("requestorEmail")}
+                    {...register("requestorEmail", {
+                      required: "Requestor's email is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -488,6 +539,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.requestorEmail && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.requestorEmail.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*    Requestor's Address  */}
@@ -497,7 +553,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("requestorAddress")}
+                    {...register("requestorAddress", {
+                      required: "Requestor's Address is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border             
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -505,6 +563,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.requestorAddress && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.requestorAddress.message}
+                    </span>
+                  )}
                 </div>
                 {/*    Requestor's Phone Number  */}
                 <div className="col-span-2">
@@ -514,7 +577,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("requestorPhone")}
+                    {...register("requestorPhone", {
+                      required: "Requestor's Phone Number is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -522,9 +587,14 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.requestorPhone && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.requestorPhone.message}
+                    </span>
+                  )}
                 </div>
 
-                {/*  redident related */}
+                {/*  resident related */}
                 <div className="mb-2 col-span-2">
                   <label className="block text-base font-medium text-left  mb-2">
                     If you reside in a country other than your country of
@@ -533,7 +603,9 @@ const AddClient = () => {
                   </label>
 
                   <select
-                    {...register("permissionToReturn")}
+                    {...register("permissionToReturn", {
+                      required: "Permission To Return is required",
+                    })}
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border    
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
                            shadow-sm transition-all duration-200 ease-in-out 
@@ -544,6 +616,11 @@ const AddClient = () => {
                     <option value={"yes" || "YES"}>YES</option>
                     <option value={"no" || "NO"}>NO</option>
                   </select>
+                  {errors.permissionToReturn && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.permissionToReturn.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  Residence title nº  */}
@@ -553,7 +630,12 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("residenceTitleNo")}
+                    {...register("residenceTitleNo", {
+                      required:
+                        selected === "yes"
+                          ? "residenceTitleNo is required"
+                          : false,
+                    })}
                     placeholder=""
                     disabled={selected !== "yes"}
                     className={`w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
@@ -567,6 +649,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900`}
                   />
+                  {errors.residenceTitleNo && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.residenceTitleNo.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  Validity end(yyyy/mm/dd)  */}
@@ -577,6 +664,10 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
+                    {...register("validityEnd", {
+                      required:
+                        selected === "yes" ? "validityEnd is required" : false,
+                    })}
                     {...register("validityEnd")}
                     placeholder=""
                     disabled={selected !== "yes"}
@@ -591,6 +682,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900`}
                   />
+                  {errors.validityEnd && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.validityEnd.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  forLife  */}
@@ -616,7 +712,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("currentOccupation")}
+                    {...register("currentOccupation", {
+                      required: "Current ocupation is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -624,6 +722,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.currentOccupation && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.currentOccupation.message}
+                    </span>
+                  )}
                 </div>
                 {/*  Employer's name. Students: teaching establishment  */}
                 <div className="col-span-2">
@@ -633,7 +736,10 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("employerOrSchool")}
+                    {...register("employerOrSchool", {
+                      required:
+                        "Employer's name. Students: teaching establishment is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -641,15 +747,22 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.employerOrSchool && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.employerOrSchool.message}
+                    </span>
+                  )}
                 </div>
                 {/*  address/phone */}
                 <div className="col-span-2">
                   <label className=" text-xl font-medium  ">
-                    address/phone <span className="text-red-600">*</span>
+                    Address/phone <span className="text-red-600">*</span>
                   </label>
                   <input
                     type="text"
-                    {...register("employerAddressPhone")}
+                    {...register("employerAddressPhone", {
+                      required: "Address/phone is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border             
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -657,6 +770,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.employerAddressPhone && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.employerAddressPhone.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*  Purpose of travel */}
@@ -668,7 +786,9 @@ const AddClient = () => {
                     <span className="text-xl">(1) </span>
                     <input
                       type="text"
-                      {...register("purposeOfTravel.field1")}
+                      {...register("purposeOfTravel.field1", {
+                        required: "Purpose of travel is required",
+                      })}
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                              focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -676,6 +796,12 @@ const AddClient = () => {
                              placeholder-gray-400 dark:placeholder-gray-500 
                              text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                     />
+
+                    {errors.purposeOfTravel?.field1 && (
+                      <span className="text-red-600 dark:text-red-300 text-sm">
+                        {errors.purposeOfTravel?.field1.message}
+                      </span>
+                    )}
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-xl">(2) </span>
@@ -701,7 +827,9 @@ const AddClient = () => {
                     <span className="text-xl">(1) </span>
                     <input
                       type="text"
-                      {...register("memberStateOfDestination.field1")}
+                      {...register("memberStateOfDestination.field1", {
+                        required: "Member State of Destination is required",
+                      })}
                       placeholder=""
                       className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border    
                           focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -709,6 +837,11 @@ const AddClient = () => {
                           placeholder-gray-400 dark:placeholder-gray-500 
                           text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                     />
+                    {errors.memberStateOfDestination?.field1 && (
+                      <span className="text-red-600 dark:text-red-300 text-sm">
+                        {errors.memberStateOfDestination?.field1.message}
+                      </span>
+                    )}
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-xl">(2) </span>
@@ -716,8 +849,7 @@ const AddClient = () => {
                       type="text"
                       {...register("memberStateOfDestination.field2")}
                       placeholder=""
-                      className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
-                 
+                      className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                 
                              focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
                              shadow-sm transition-all duration-200 ease-in-out 
                              placeholder-gray-400 dark:placeholder-gray-500 
@@ -734,7 +866,10 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("borderOfFirstEntry")}
+                    {...register("borderOfFirstEntry", {
+                      required:
+                        "Border of first entrance or transit route is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
                  
@@ -743,6 +878,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.borderOfFirstEntry && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.borderOfFirstEntry.message}
+                    </span>
+                  )}
                 </div>
               </div>
             </TabPanel>
@@ -760,7 +900,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("numberOfEntries")}
+                    {...register("numberOfEntries", {
+                      required: "Number of entries requested is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                 
                         focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -768,6 +910,11 @@ const AddClient = () => {
                         placeholder-gray-400 dark:placeholder-gray-500 
                         text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.numberOfEntries && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.numberOfEntries.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Duration of stay (days  */}
@@ -778,7 +925,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("durationOfStay")}
+                    {...register("durationOfStay", {
+                      required: "Duration of stay is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                          
                         focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -786,6 +935,11 @@ const AddClient = () => {
                         placeholder-gray-400 dark:placeholder-gray-500 
                         text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.durationOfStay && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.durationOfStay.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   intended date */}
@@ -797,7 +951,10 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("intendedArrival")}
+                    {...register("intendedArrival", {
+                      required:
+                        "Intended date of arrival of the first intended stay in the Schengen area is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border                  
                         focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -805,6 +962,11 @@ const AddClient = () => {
                         placeholder-gray-400 dark:placeholder-gray-500 
                         text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.intendedArrival && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.intendedArrival.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   intended date */}
@@ -815,7 +977,10 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("intendedDeparture")}
+                    {...register("intendedDeparture", {
+                      required:
+                        "Intended date of departure from the Schengen area after the first intended stay is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -823,6 +988,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.intendedDeparture && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.intendedDeparture.message}
+                    </span>
+                  )}
                 </div>
 
                 <span> Fingerprints </span>
@@ -835,7 +1005,10 @@ const AddClient = () => {
                     <span className="text-red-600">*</span>
                   </label>
                   <select
-                    {...register("fingerprintsCollected")}
+                    {...register("fingerprintsCollected", {
+                      required:
+                        "Fingerprints collected previously for the purpose of applying for a Schengen visa is required",
+                    })}
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border     
                            focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
                            shadow-sm transition-all duration-200 ease-in-out 
@@ -855,7 +1028,12 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("fingerprintsDate")}
+                    {...register("fingerprintsDate", {
+                      required:
+                        fingerprint === "yes"
+                          ? "fingerprintsDate is required"
+                          : false,
+                    })}
                     placeholder=""
                     disabled={fingerprint !== "yes"}
                     className={`w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
@@ -877,7 +1055,12 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("visaStickerNumber")}
+                    {...register("visaStickerNumber", {
+                      required:
+                        fingerprint === "yes"
+                          ? "visaStickerNumber is required"
+                          : false,
+                    })}
                     placeholder=""
                     disabled={fingerprint !== "yes"}
                     className={`w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
@@ -907,7 +1090,10 @@ const AddClient = () => {
                     <span className="text-red-600">*</span>
                   </label>
                   <select
-                    {...register("transitEntryPermit")}
+                    {...register("transitEntryPermit", {
+                      required:
+                        "In the case of transit, have you an entry permit for the                  final country of destination is required",
+                    })}
                     className="w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border    
                              focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
                              shadow-sm transition-all duration-200 ease-in-out 
@@ -918,6 +1104,11 @@ const AddClient = () => {
                     <option value={"yes" || "YES"}>YES</option>
                     <option value={"no" || "NO"}>NO</option>
                   </select>
+                  {errors.transitEntryPermit && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.transitEntryPermit.message}
+                    </span>
+                  )}
                 </div>
 
                 {/*   intended date */}
@@ -928,7 +1119,12 @@ const AddClient = () => {
                   </label>
                   <input
                     type="date"
-                    {...register("transitPermitValidUntil")}
+                    {...register("transitPermitValidUntil", {
+                      required:
+                        entrypermit === "yes"
+                          ? "transitPermitValidUntil is required"
+                          : false,
+                    })}
                     placeholder=""
                     disabled={entrypermit !== "yes"}
                     className={`w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
@@ -942,6 +1138,11 @@ const AddClient = () => {
                              placeholder-gray-400 dark:placeholder-gray-500 
                              text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900`}
                   />
+                  {errors.transitPermitValidUntil && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.transitPermitValidUntil.message}
+                    </span>
+                  )}
                 </div>
 
                 {/* Issuing Entity */}
@@ -955,7 +1156,12 @@ const AddClient = () => {
                   <input
                     id="issuingEntity"
                     type="text"
-                    {...register("issuingEntity", { required: true })}
+                    {...register("issuingEntity", {
+                      required:
+                        entrypermit === "yes"
+                          ? "issuingEntity is required"
+                          : false,
+                    })}
                     placeholder="Enter issuing authority"
                     disabled={entrypermit !== "yes"}
                     className={`w-full h-10  md:h-14 mt-2 px-4 py-2 rounded-lg border 
@@ -969,6 +1175,11 @@ const AddClient = () => {
                            placeholder-gray-400 dark:placeholder-gray-500 
                            text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900`}
                   />
+                  {errors.issuingEntity && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.issuingEntity.message}
+                    </span>
+                  )}
                 </div>
               </div>
             </TabPanel>
@@ -983,7 +1194,10 @@ const AddClient = () => {
                 <div className="col-span-2">
                   <input
                     type="text"
-                    {...register("referenceInTheNationalTerritory")}
+                    {...register("referenceInTheNationalTerritory", {
+                      required:
+                        " Reference in the National Territory: is required",
+                    })}
                     placeholder=""
                     className="w-full h-10  px-4 py-2 rounded-lg border     
                                  focus:border-blue-500 focus:ring-2 focus:ring-blue-200 
@@ -991,6 +1205,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.referenceInTheNationalTerritory && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.referenceInTheNationalTerritory.message}
+                    </span>
+                  )}
                 </div>
 
                 <span className="text-lg font-semibold col-span-2">
@@ -1007,7 +1226,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingPerson.name")}
+                    {...register("invitingPerson.name", {
+                      required: " Name is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1017,6 +1238,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingPerson?.name && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingPerson?.name.message}
+                    </span>
+                  )}
                 </div>
                 {/* name  */}
                 <div className="col-span-2 md:col-span-1">
@@ -1026,7 +1252,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingPerson.address")}
+                    {...register("invitingPerson.address", {
+                      required: " Address is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1036,6 +1264,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingPerson?.address && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingPerson?.address.message}
+                    </span>
+                  )}
                 </div>
                 {/* name  */}
                 <div className="col-span-2 md:col-span-1">
@@ -1045,7 +1278,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingPerson.country")}
+                    {...register("invitingPerson.country", {
+                      required: " Country is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1055,6 +1290,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingPerson?.country && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingPerson?.country.message}
+                    </span>
+                  )}
                 </div>
 
                 <span className="text-lg font-semibold col-span-2">
@@ -1068,7 +1308,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingCompany.name")}
+                    {...register("invitingCompany.name", {
+                      required: " Name is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1078,6 +1320,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingCompany?.name && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingCompany?.name.message}
+                    </span>
+                  )}
                 </div>
                 {/* name  */}
                 <div className="col-span-2 md:col-span-1">
@@ -1087,7 +1334,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingCompany.address")}
+                    {...register("invitingCompany.address", {
+                      required: " Address is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1097,6 +1346,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingCompany?.address && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingCompany?.address.message}
+                    </span>
+                  )}
                 </div>
                 {/* name  */}
                 <div className="col-span-2 md:col-span-1">
@@ -1106,7 +1360,9 @@ const AddClient = () => {
                   </label>
                   <input
                     type="text"
-                    {...register("invitingCompany.country")}
+                    {...register("invitingCompany.country", {
+                      required: " Country is required",
+                    })}
                     // value={data.email}
 
                     placeholder=""
@@ -1116,6 +1372,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                   />
+                  {errors.invitingCompany?.country && (
+                    <span className="text-red-600 dark:text-red-300 text-sm">
+                      {errors.invitingCompany?.country.message}
+                    </span>
+                  )}
                 </div>
 
                 <span className="text-lg font-semibold col-span-2">
@@ -1130,7 +1391,9 @@ const AddClient = () => {
                     </label>
                     <input
                       type="text"
-                      {...register("travelExpenses.applicant.field1")}
+                      {...register("travelExpenses.applicant.field1", {
+                        required: " Applicant is required",
+                      })}
                       // value={data.email}
 
                       placeholder=""
@@ -1140,6 +1403,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                     />
+                    {errors.travelExpenses?.applicant?.field1 && (
+                      <span className="text-red-600 dark:text-red-300 text-sm">
+                        {errors.travelExpenses?.applicant?.field1.message}
+                      </span>
+                    )}
                     <input
                       type="text"
                       {...register("travelExpenses.applicant.field2")}
@@ -1161,7 +1429,9 @@ const AddClient = () => {
                     </label>
                     <input
                       type="text"
-                      {...register("travelExpenses.sponsor.field1")}
+                      {...register("travelExpenses.sponsor.field1", {
+                        required: " Sponsor is required",
+                      })}
                       // value={data.email}
 
                       placeholder=""
@@ -1171,6 +1441,11 @@ const AddClient = () => {
                                  placeholder-gray-400 dark:placeholder-gray-500 
                                  text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-900"
                     />
+                    {errors.travelExpenses?.sponsor?.field1 && (
+                      <span className="text-red-600 dark:text-red-300 text-sm">
+                        {errors.travelExpenses?.sponsor?.field1.message}
+                      </span>
+                    )}
                     <input
                       type="text"
                       {...register("travelExpenses.sponsor.field2")}
